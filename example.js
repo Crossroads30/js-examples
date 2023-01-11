@@ -569,3 +569,86 @@ setTimeout(() =>{
 //    }
 // }
 // console.log(getNumberExplanation(7))
+//-----------------------------------
+//------------циклы-------------------
+// выводит от 1 до заданного числа:
+// const printNumbers = (lastNumber) => {
+// let i = 1 // i - это счётчик
+//    while (i <= lastNumber) {
+// console.log(i)
+//    i = i + 1
+//    }
+//    console.log('finished!')
+// }
+// printNumbers(3)
+//---------------------------------
+//выводит от заданного числа до 1:
+// const printNumbers = (initialNumber) => {
+//    let i = initialNumber
+//       while (i >= 1){
+//    console.log(i)
+//       i = i - 1
+//    }
+//    console.log('finished!')
+// }
+// printNumbers(6)
+//--------------------------------
+// Реализуем функцию, которая складывает числа в указанном диапазоне, включая границы. Диапазоном в данном случае называется ряд чисел от какого-то начала до определенного конца. Например, диапазон [1, 10] включает в себя все целые числа от 1 до 10.
+// const sumNumbersFromRange = (start, finish) => {
+//    // Технически можно менять start
+//    // Но входные аргументы нужно оставлять в исходном значении
+//    // Это сделает код проще для анализа
+//    let i = start;
+//    let sum = 0; // Инициализация суммы
+//    while (i <= finish) { // Двигаемся до конца диапазона
+//      sum = sum + i; // Считаем сумму для каждого числа
+//      i = i + 1; // Переходим к следующему числу в диапазоне
+//    }
+//    // Возвращаем получившийся результат
+//    return console.log(sum)
+// }
+// sumNumbersFromRange(5,9)
+//--------------------------------
+//тоже самое , но с умножением:
+// multiplyNumbersFromRange = (start,finish) => {
+//    let i = start
+//    let sum = 1
+//    while (i <= finish){
+//       sum = sum * i
+//       i = i + 1
+//    }
+//    return console.log(sum)
+// }
+// multiplyNumbersFromRange(2,4)
+//---------------------------------
+//функция, которая объединяет все числа из диапазона в строку:
+// joinNumbersFromRange = (start,finish) =>{
+//    let i = start
+//    let result = ''
+//    while (i <= finish ){
+//       result = `${result}${i}`
+//       i = i + 1
+//    }
+//    return console.log(result)
+// }
+// joinNumbersFromRange(2,10)
+//--------------------------------
+// const printNameBySymbol = (name) => {
+//    let i = 0;
+//    // Такая проверка будет выполняться до конца строки
+//    // включая последний символ. Его индекс `length - 1`.
+//    while (i < name.length) {
+//      // Обращаемся к символу по индексу
+//       console.log(name[i]);
+//       i = i + 1;
+//    }
+// }
+//тоже самое, только наоборот:
+// printReversedWordBySymbol = (name) => {
+//    let i = name.length -1
+//       while (i >= 0) {
+//       console.log(name[i])
+//       i = i - 1
+//    }
+// }
+// printReversedWordBySymbol('Hexlet')
