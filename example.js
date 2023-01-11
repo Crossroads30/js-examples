@@ -437,7 +437,9 @@ setTimeout(() =>{
 //    return result;
 // };
 // truncate()
-
+//или так:
+//truncate = (text,length) =>  `${text.slice(0, length)}...`
+//console.log(truncate('приветик',4))
 //-------------------------
 // getHiddenCard = (numbner,hidden = 4) => {
 //    result = `${'*'.repeat(hidden)}${numbner.slice(12)}`
@@ -482,6 +484,8 @@ setTimeout(() =>{
 // const isNotPalindrome = (word) => !isPalindrome(word)
 // console.log(isPalindrome('Калаш'))
 // console.log(isNotPalindrome('Шалаш'))
+//------или так:
+//const isPalindrome = (word) => word.split('').reverse().join('').toLowerCase() === word.toLowerCase() 
 //------------------------
 //0, '', undefined, NaN, null приводятся к false. 
 //Эти значения называют falsy.
@@ -508,7 +512,7 @@ setTimeout(() =>{
 // normalizeUrl = (addres) => (addres.startsWith('https://'))? addres: `https://${addres}`
 // console.log(normalizeUrl("google.com"))
 //-------тоже самое что и это:
-   // const addresUrl = addres.startsWith('https://')
+// normalizeUrl = (addres) => {
 //    if (addres.startsWith('https://') ) {
 // return addres
 //    }
@@ -517,4 +521,51 @@ setTimeout(() =>{
 //    }
 // }
 // console.log(normalizeUrl('https://ai.fi'))
+//-----------------------------------
 
+// const whoIsThisHouseToStarks = (family) => {
+//    let familyStatus 
+//    if (family === 'Karstark'|| family === 'Tally'){
+//       familyStatus = 'friend'
+//    } else if (family === 'Lannister'|| family === 'Frey') {
+//       familyStatus = 'enemy'
+//    } else if (family === '') {
+//          familyStatus = 'undefined'
+//    } 
+//    else {
+//       familyStatus = 'nutral'
+//    }
+// return `Family is ${familyStatus}`
+// }
+// console.log(whoIsThisHouseToStarks('Tally'))
+//тоже самое:
+// whoIsThisHouseToStarks = (family) => 
+// (family === 'Karstark'|| family ==='Tally')? 'friend': 
+// (family === 'Lannister' || family === 'Frey') ? 'enemy' : 'neutral'
+//---------------------------------------
+// const convertText = (text) => {
+//    if (text === '') {
+//    return ''
+//    }
+//    const reversable = text[0] !== text[0].toUpperCase()
+//    return reversable ? text.split('').reverse().join('') : text
+// }
+// console.log(convertText('Hello'))
+// convertText = (text) => 
+// (text === '')? '':
+// (text[0] === text[0].toUpperCase())? text : text.split('').reverse().join('')
+// console.log(convertText('Hello'))
+//---------------------------------------
+// getNumberExplanation = (number) => {
+//    switch(number) {
+//    case 666: 
+//       return 'devil number'
+//    case 42:
+//       return'answer for everything'
+//    case 7: 
+//       return'prime number'
+//    default: 
+//       return null
+//    }
+// }
+// console.log(getNumberExplanation(7))
