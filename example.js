@@ -644,11 +644,52 @@ setTimeout(() =>{
 //    }
 // }
 //тоже самое, только наоборот:
-// printReversedWordBySymbol = (name) => {
+// const printReversedWordBySymbol = (name) => {
 //    let i = name.length -1
 //       while (i >= 0) {
 //       console.log(name[i])
-//       i = i - 1
+//       i--
 //    }
 // }
 // printReversedWordBySymbol('Hexlet')
+//------------------------------
+//-----функция, которая считает, сколько раз входит буква в предложение. 
+//-----Пример её работы:
+// const countChars = (str, char) => {
+//    let i = 0
+//    let count = 0
+//    while (i < str.length) {
+//       if (str[i].toLowerCase() === char.toLowerCase()) {
+//        // Считаем только подходящие символы
+//          count = count + 1
+//       }
+//      // Счетчик увеличивается в любом случае
+//       i = i + 1
+//    }
+//    return console.log(count)
+// }
+// countChars('Я помню чудное мгновенье','я')
+//-------------------------------
+//Есть одна задача, крайне популярная среди людей, 
+//проводящих собеседования, это переворот строки
+//Пример работы этой функции:
+// const reverse = (str) => {
+//    let i = 0
+//    // Нейтральный элемент для строк это пустая строка
+//    let result = ''
+//    while (i < str.length) {
+//      // Соединяем в обратном порядке
+//       result = `${str[i]}${result}`
+//      // То же самое через конкатенацию
+//      // result = str[i] + result;
+//       i = i + 1
+//    }
+//    return console.log(result)
+// }
+// reverse('Bran') 
+//  // Проверка нейтрального элемента
+// reverse('') 
+//--------------------------
+const even = (numbers) => {
+   
+}
