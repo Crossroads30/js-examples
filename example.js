@@ -690,6 +690,118 @@ setTimeout(() =>{
 //  // Проверка нейтрального элемента
 // reverse('') 
 //--------------------------
-const even = (numbers) => {
-   
+
+// function even(number) {
+//    if(number % 2 == 0)return 'Even'
+//    else return 'Odd'
+// }
+// console.log(even(5))
+
+// const even = (number) => {
+//    number = number.toString()
+//    let i = 0
+//    let result = ''
+//    while (i < number.length) {
+//       if (i % 2 !== 0) {
+//          result = `${result}${number[i]}`
+//       }
+//       i = i + 1
+//    }
+//    return result
+// }
+// console.log(even(123456789))
+//------------------------------
+//функция filterString(), принимающая на вход строку и символ, 
+//и возвращающую новую строку, в которой удален переданный символ во всех его позициях. 
+//Регистр символов важен.
+// const filterString = (str,symbol) => {
+//    let i = 0
+//    let result = ''
+//    while ( i < str.length ) {
+//       const strSymbol = str[i]
+// if (strSymbol !== symbol){
+//    result = `${result}${strSymbol}`
+// }
+// i += 1
+//    }
+//    return result
+// }
+// console.log(filterString('Я помню чудное мгновенье','Я'))
+//------------------------
+// Напишите функцию makeItFunny(), 
+// которая принимает на вход строку и возвращает её копию, 
+// у которой каждый n-ный элемент переведен в верхний регистр. 
+// n – задается на входе в функцию.
+
+// Для определения каждого n-ного элемента понадобится остаток от деления %. 
+// Подумайте, как его можно использовать.
+//----решение:
+// const makeItFunny = (str,n) => {
+//    let i = 0
+//    let result = ''
+//    while (i < str.length) {
+//       const element = str[i]
+//       if ((i + 1) % n === 0){
+//          result = `${result}${element.toUpperCase()}`
+//       } else {
+//          result = `${result}${element}`
+//       }
+//       i++
+//    }
+//    return result
+// }
+// console.log(makeItFunny('Я помню чудное мгновенье',3))
+//---------------------
+//алгоритм проверки простоты числа. 
+// Будем делить искомое число x на все числа из диапазона от двух до x - 1 
+// и смотреть остаток от деления. Если в этом диапазоне не найден делитель, 
+// который делит число x без остатка, значит перед нами простое число.
+const isPrime = (number) => {
+   if (number < 2) {
+   return false;
+   }
+   let divider = 2;
+   while (divider <= number / 2) {
+   if (number % divider === 0) {
+      return false;
+   }
+   divider += 1;
+   }
+   return true;
 }
+//----------------------------------
+//Реализуйте функцию hasChar(), которая проверяет (с учётом регистра), 
+// содержит ли строка указанную букву. Функция принимает два параметра:
+// Строка
+// Буква для поиска
+//решение:
+// const hasChar = (str, char) => {
+//    let i = 0
+//    while (i < str.length) {
+//       if (str[i] === char) {
+//       return true
+//    }
+//       i += 1
+//    }
+//    return false
+// }
+// console.log(hasChar('Hexlet', 'H'))
+//Посмотрим реализацию переворота строки через цикл for:
+// const reverseString = (str) => {
+//    let result = ''
+//    for (let i = 0; i < str.length; i += 1) {
+//       result = `${str[i]}${result}`
+//    }
+//    return result
+// }
+//программа, которая бы шифровала сообщения по следующему алгоритму. 
+//Она берёт текст и переставляет в нем каждые два подряд идущих символа.
+// encrypt = (text) => { 
+//    let result = ''
+//    for (let i = 0; i < text.length; i += 2) {
+//       const nextSymbol = text[i + 1] || ''
+//       result = `${result}${nextSymbol}${text[i]}`
+//    }
+//    return result
+// }
+// console.log(encrypt('Изучение программирования — интересный и захватывающий процеcc'))
