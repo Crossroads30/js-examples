@@ -756,19 +756,19 @@ setTimeout(() =>{
 // Будем делить искомое число x на все числа из диапазона от двух до x - 1 
 // и смотреть остаток от деления. Если в этом диапазоне не найден делитель, 
 // который делит число x без остатка, значит перед нами простое число.
-const isPrime = (number) => {
-   if (number < 2) {
-   return false;
-   }
-   let divider = 2;
-   while (divider <= number / 2) {
-   if (number % divider === 0) {
-      return false;
-   }
-   divider += 1;
-   }
-   return true;
-}
+// const isPrime = (number) => {
+//    if (number < 2) {
+//    return false;
+//    }
+//    let divider = 2;
+//    while (divider <= number / 2) {
+//    if (number % divider === 0) {
+//       return false;
+//    }
+//    divider += 1;
+//    }
+//    return true;
+// }
 //----------------------------------
 //Реализуйте функцию hasChar(), которая проверяет (с учётом регистра), 
 // содержит ли строка указанную букву. Функция принимает два параметра:
@@ -805,3 +805,58 @@ const isPrime = (number) => {
 //    return result
 // }
 // console.log(encrypt('Изучение программирования — интересный и захватывающий процеcc'))
+//
+//Перепишите функцию, используя оператор '?' или '||'
+// function checkAge(age) {
+//    if (age > 18) {
+//       return true;
+//    } else {
+//       return confirm('Родители разрешили?');
+//    }
+// }
+// //решение
+// function checkAge(age) {
+//    return age > 18 ||  confirm('А родители разрешили?');   
+// }
+// function checkAge(age) {
+//    return (age > 18)? true : confirm('А родители разрешили?'); 
+// }
+//--------------------
+// Напишите функцию min(a,b), которая возвращает меньшее из чисел a и b
+// const min = (a,b) => { 
+//    if(a>b){
+//       return b
+//    } return a
+// }
+// console.log(min(3,-2))
+// const min = (a,b) => a > b ? b : a
+// console.log(min(3,-2))
+//----------------------
+//Напишите функцию pow(x,n), которая возвращает x в степени n. 
+//Иначе говоря, умножает x на себя n раз и возвращает результат.
+// function pow(x, n) {
+//    let result = x**n
+//    return result
+// }
+// let x = prompt("x?", '');
+// let n = prompt("n?", '');
+// if (n < 1) {
+//    alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+// } else {
+//    alert( pow(x, n) );
+// }
+//тоже самое с циклом for:
+// function pow(x, n) {
+//    let result = x;
+//    for (let i = 1; i < n; i++) {
+//      result *= x;
+//    }
+//    return result;
+// }
+// let x = prompt("x?", '');
+// let n = prompt("n?", '');
+// if (n < 1) {
+//    alert(`Степень ${n} не поддерживается, используйте натуральное число`);
+// } else {
+//    alert( pow(x, n) );
+// }
