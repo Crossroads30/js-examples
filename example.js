@@ -860,3 +860,185 @@ setTimeout(() =>{
 // } else {
 //    alert( pow(x, n) );
 // }
+//--------------------------
+// let ask = (question, yes, no) => (confirm(question))? yes(): no()
+// ask("Вы согласны?"),() =>  alert("Вы согласились."),() => alert("Вы отменили выполнение.")
+//---------------------------
+// let styles = ['jazz','blues','grunge']
+// styles.push('rock&roll')
+// styles[Math.floor((styles.length - 1) / 2)] = 'classic'
+// console.log(styles.shift())
+// styles.unshift('rap','raggy')
+// styles[Math.floor((styles.length - 1) / 2)] = 'metall'
+// console.log(styles)
+//-----------------------
+/**Напишите функцию sumInput(), которая:
+
+Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
+Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
+Подсчитывает и возвращает сумму элементов массива.
+P.S. Ноль 0 – считается числом, не останавливайте ввод значений при вводе «0».
+
+ */
+// function sumInput(){
+// let numbers = []
+// while(true){
+// let result = prompt('введите число',0);
+// if(result ==='' || result === null || !isFinite(result)) break;
+// numbers.push(+result)
+// }
+// let sum = 0;
+// for (let number of numbers) {
+//   sum += number;
+// }
+// return sum;
+// }
+// alert( sumInput() )
+//-----------------------
+/**На входе массив чисел, например: arr = [1, -2, 3, 4, -9, 6].
+
+Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+
+Функция getMaxSubSum(arr) должна возвращать эту сумму.
+
+ */
+// let arr = [-1, 2, 3, -9, 11]
+//    function getMaxSubSum(arr) {
+//       let maxSum = 0; // если элементов не будет - возвращаем 0
+//       for (let i = 0; i < arr.length; i++) {
+//       let sumFixedStart = 0;
+//       for (let j = i; j < arr.length; j++) {
+//          sumFixedStart += arr[j];
+//          maxSum = Math.max(maxSum, sumFixedStart);
+//       }
+//    }
+//    return maxSum;
+// }
+// console.log(getMaxSubSum(arr))
+//другое решение
+// function getMaxSubSum(arr) {
+//    let maxSum = 0;
+//    let partialSum = 0;
+//    for (let item of arr) { // для каждого элемента массива
+//      partialSum += item; // добавляем значение элемента к partialSum
+//      maxSum = Math.max(maxSum, partialSum); // запоминаем максимум на данный момент
+//      if (partialSum < 0) partialSum = 0; // ноль если отрицательное
+//    }
+//    return maxSum;
+// }
+/**Шпаргалка по методам массива:
+
+Для добавления/удаления элементов:
+
+push (...items) – добавляет элементы в конец,
+pop() – извлекает элемент с конца,
+shift() – извлекает элемент с начала,
+unshift(...items) – добавляет элементы в начало.
+splice(pos, deleteCount, ...items) – начиная с индекса pos, удаляет deleteCount элементов и вставляет items.
+slice(start, end) – создаёт новый массив, копируя в него элементы с позиции start до end (не включая end).
+concat(...items) – возвращает новый массив: копирует все члены текущего массива и добавляет к нему items. Если какой-то из items является массивом, тогда берутся его элементы.
+Для поиска среди элементов:
+
+indexOf/lastIndexOf(item, pos) – ищет item, начиная с позиции pos, и возвращает его индекс или -1, если ничего не найдено.
+includes(value) – возвращает true, если в массиве имеется элемент value, в противном случае false.
+find/filter(func) – фильтрует элементы через функцию и отдаёт первое/все значения, при прохождении которых через функцию возвращается true.
+findIndex похож на find, но возвращает индекс вместо значения.
+Для перебора элементов:
+
+forEach(func) – вызывает func для каждого элемента. Ничего не возвращает.
+Для преобразования массива:
+
+map(func) – создаёт новый массив из результатов вызова func для каждого элемента.
+sort(func) – сортирует массив «на месте», а потом возвращает его.
+reverse() – «на месте» меняет порядок следования элементов на противоположный и возвращает изменённый массив.
+split/join – преобразует строку в массив и обратно.
+reduce/reduceRight(func, initial) – вычисляет одно значение на основе всего массива, вызывая func для каждого элемента и передавая промежуточный результат между вызовами.
+Дополнительно:
+
+Array.isArray(arr) проверяет, является ли arr массивом.
+Обратите внимание, что методы sort, reverse и splice изменяют исходный массив. */
+//------------------------
+/**Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+
+То есть дефисы удаляются, а все слова после них получают заглавную букву. */
+// function camelize(str){
+// return str.split('-').map((word,index) => index == 0 ? word: word[0].toUpperCase()+ word.slice(1)).join('') 
+// }  
+// console.log(camelize('-webkit-transition'))
+//------------------
+/**Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива.
+
+Функция должна возвращать новый массив и не изменять исходный. */
+// function filterRange(arr, a, b){
+// return arr.filter(item => (a <= item && item <= b));
+// }
+// arr = [5, 3, 8, 1]
+// console.log(filterRange(arr, 1, 4))
+//--------------------
+/**Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b. То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+
+Функция должна изменять принимаемый массив и ничего не возвращать. */
+// function filterRangeInPlace(arr, a, b){
+//    for (let i = 0; i < arr.length; i++) {
+//       let val = arr[i];
+// // удалить, если за пределами интервала
+//          if (val < a || val > b) {
+//          arr.splice(i, 1);
+//          i--;
+//       }
+//    }  
+// }
+// arr = [5, 3, 8, 1]
+// filterRangeInPlace(arr, 1, 4)
+// console.log(arr)
+//-----------------------
+//сортировка массива по убыванию
+// let arr = [5, 2, 1, -10, 8];
+
+// arr.sort((a, b) => b - a);
+// console.log(arr)
+//------------------------
+/**У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+Создайте функцию copySorted(arr), которая будет возвращать такую копию. */
+//Для копирования массива используем slice() и тут же – сортировку:
+// function copySorted(arr) {
+//    return arr.slice().sort();
+// }
+// let arr = ["HTML", "JavaScript", "CSS"];
+// let sorted = copySorted(arr);
+// console.log( sorted );
+// console.log( arr );
+//-------------------------
+/**Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
+Задание состоит из двух частей.
+Во-первых, реализуйте метод calculate(str), который принимает строку типа "1 + 2" в 
+формате «ЧИСЛО оператор ЧИСЛО» (разделено пробелами) и возвращает результат. 
+Метод должен понимать плюс + и минус -. 
+Затем добавьте метод addMethod(name, func), который добавляет в калькулятор новые операции. 
+Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.*/
+// function Calculator() {
+//    this.methods = {
+//    "-": (a, b) => a - b,
+//    "+": (a, b) => a + b
+// };
+//    this.calculate = function(str) {
+//    let split = str.split(' '),
+//       a = +split[0],
+//       op = split[1],
+//       b = +split[2]
+//    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//    }
+//    return this.methods[op](a, b);
+// }
+//    this.addMethod = function(name, func) {
+//    this.methods[name] = func;
+//    };
+// }
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+// let result = powerCalc.calculate("2 ** 3");
+// console.log( result ); 
