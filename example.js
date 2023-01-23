@@ -756,19 +756,19 @@ setTimeout(() =>{
 // Будем делить искомое число x на все числа из диапазона от двух до x - 1 
 // и смотреть остаток от деления. Если в этом диапазоне не найден делитель, 
 // который делит число x без остатка, значит перед нами простое число.
-const isPrime = (number) => {
-   if (number < 2) {
-   return false;
-   }
-   let divider = 2;
-   while (divider <= number / 2) {
-   if (number % divider === 0) {
-      return false;
-   }
-   divider += 1;
-   }
-   return true;
-}
+// const isPrime = (number) => {
+//    if (number < 2) {
+//    return false;
+//    }
+//    let divider = 2;
+//    while (divider <= number / 2) {
+//    if (number % divider === 0) {
+//       return false;
+//    }
+//    divider += 1;
+//    }
+//    return true;
+// }
 //----------------------------------
 //Реализуйте функцию hasChar(), которая проверяет (с учётом регистра), 
 // содержит ли строка указанную букву. Функция принимает два параметра:
@@ -785,7 +785,7 @@ const isPrime = (number) => {
 //    }
 //    return false
 // }
-// console.log(hasChar('Hexlet', 'H'))
+// console.log(hasChar('Hexlet', 'e'))
 //Посмотрим реализацию переворота строки через цикл for:
 // const reverseString = (str) => {
 //    let result = ''
@@ -805,3 +805,8 @@ const isPrime = (number) => {
 //    return result
 // }
 // console.log(encrypt('Изучение программирования — интересный и захватывающий процеcc'))
+const greet = (text) => {
+   text = 'Hello!'
+   return text
+}
+console.log(greet())
