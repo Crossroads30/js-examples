@@ -922,8 +922,29 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
   //  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
   //  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
   // ]))
-   
-
-   
-
+   //====================================
+   //===========№15======================
+const minSum = (num) => {
+  num = [5,4,2,3]
+  let num1 = Math.min(...num)
+  let num2 = Math.max(...num)
+//  let max = num[0];
+//  let min = num[0]
+//  let resArr = []
+//  for ( i = 1; i < num.length; i++) {
+//    if (num[i] > max) {
+//        max = num[i];
+//    } else if ( num[i]< min) {
+//      min = num[i]
+//    }
+//} return resArr.push(num[i])
+return num2
+} 
+   console.log(minSum())
+  // for ( i = 1; i < num.length; i++) {
+  //  if (num[i] > max) {
+  //      max = num[i];
+  //  } else if ( num[i]< min) {
+  //    min = num[i]
+  //  }
    
