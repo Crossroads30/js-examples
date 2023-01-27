@@ -805,8 +805,97 @@ setTimeout(() =>{
 //    return result
 // }
 // console.log(encrypt('Изучение программирования — интересный и захватывающий процеcc'))
-const greet = (text) => {
-   text = 'Hello!'
-   return text
-}
-console.log(greet())
+//----------------------------
+//function isEmpty(obj) {
+//  let schedule = {};
+//  schedule = obj;
+//  for (let key in obj){
+//    return false
+//  }
+//  return true
+//}
+//console.log(isEmpty())
+//-------------------------------
+//let salaries = {
+//  John: 100,
+//  Ann: 160,
+//  Pete: 130
+//}
+
+//let sum = 0
+//for (let key in salaries) {
+// sum = sum + salaries[key]
+//}
+
+//console.log(sum)
+//----------------------------------
+//let menu = {
+//  width: 200,
+//  height: 300,
+//  title: "My menu"
+//};
+
+//function multiplyNumeric (obj) {
+//  let res = 0
+//    for(let key in obj){
+//      if (typeof obj[key] == 'number') {
+//       res = obj[key] * 2;
+//    }
+//    return res
+//  }
+//}
+
+//console.log(multiplyNumeric(menu))
+//----------------------------------
+//let calculator = {
+//  sum() {
+//    return this.a + this.b;
+//  },
+
+//  mul() {
+//    return this.a * this.b;
+//  },
+
+//  read() {
+//    this.a = +prompt('a?', 0);
+//    this.b = +prompt('b?', 0);
+//  }
+//};
+//-----------------------
+//let ladder = {
+//  step: 0,
+//  up() {
+//    this.step++;
+//    return this;
+//  },
+//  down() {
+//    this.step--;
+//    return this;
+//  },
+//  showStep: function() { // показывает текущую ступеньку
+//    alert( this.step );
+//    return this;
+//  }
+//};
+//console.log(ladder.up().up().down().showStep().down().showStep());
+//function isPowerOfTwo(n){
+//  let res =[]
+//  for (let i = 0; i < 20; i++){
+//    res.push(i)
+//  }
+// let num = res.map((el)=> 2** el)
+// return num.includes(n)
+//  }
+//  console.log(isPowerOfTwo(102))
+  // more
+  //function isPowerOfTwo(n){
+  //  let i = 0;
+  //  while(2**i < n){i++}
+  //    return (2**i == n) ? true : false;
+  //  }
+  //  console.log(isPowerOfTwo(1024))
+    //more
+  //  function isPowerOfTwo(n){
+  //    return Number.isInteger(Math.log2(n));
+      
+  //}
