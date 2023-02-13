@@ -924,10 +924,10 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
   // ]))
    //====================================
    //===========№15======================
-const minSum = (num) => {
-  num = [5,4,2,3]
-  let num1 = Math.min(...num)
-  let num2 = Math.max(...num)
+//const minSum = (num) => {
+//  num = [5,4,2,3]
+//  let num1 = Math.min(...num)
+//  let num2 = Math.max(...num)
 //  let max = num[0];
 //  let min = num[0]
 //  let resArr = []
@@ -938,13 +938,426 @@ const minSum = (num) => {
 //      min = num[i]
 //    }
 //} return resArr.push(num[i])
-return num2
-} 
-   console.log(minSum())
+//return num2
+//} 
+//   console.log(minSum())
   // for ( i = 1; i < num.length; i++) {
   //  if (num[i] > max) {
   //      max = num[i];
   //  } else if ( num[i]< min) {
   //    min = num[i]
   //  }
-   
+  //function strCount(obj){
+  //  count = 0
+  //   obj =  Object.values(obj).flat()
+  //    console.log(obj)
+  //  for ( i = 0; i < obj.length; i++ ) {
+  //    if ( typeof obj[i] == 'string'){
+  //      count++
+  //    } 
+  //  } return count
+  //}
+  //console.log(strCount(obj = {
+  //  first: "1",
+  //  second: "2",
+  //  third: false,
+  //  fourth: ["anytime",2,3,4],
+  //  fifth:  null
+  //  }))
+  //=======================================
+  /**Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
+
+strCount({
+  first: "1",
+  second: "2",
+  third: false,
+  fourth: ["anytime",2,3,4],
+  fifth:  null
+  })
+  //returns 3 */
+  //solution without recursion( not correct in some tests )
+//  function strCount(obj){
+//    let count = 0; 
+
+//    if ( typeof obj === 'object' && !Array.isArray(obj) ){ 
+//     obj = Object.values(obj).flat();
+//    for ( i = 0; i < obj.length; i++ ) {
+//      if ( typeof obj[i] == 'string'){
+//        count++
+//      };
+//    } return count
+//  };
+//    if ( Array.isArray(obj) ) {
+//    obj = obj.flat()
+//   console.log(obj)
+//    for ( i = 0; i < obj.length; i++ ) {
+//      if ( typeof obj[i] == 'string'){
+//        count++
+//      }; 
+//    } return count
+//  };  
+//};   
+//  console.log(strCount(
+//    {
+//        first: "1",
+//        second: "2",
+//        third: false,
+//        fourth: ["anytime",2,3,4],
+//        fifth:  null
+//        }
+//));
+// wright solution with recursion!
+//function strCount(obj){
+//  let count = 0;
+
+//  for(let key in obj){
+//    if ( typeof obj[key] === 'object'){
+//        count+=strCount(obj[key])
+//    };
+//      if ( typeof obj[key] === 'string'){
+//         count++
+//      };
+//    } return count;
+// };
+//  console.log(strCount(
+//    {
+//        first: "1",
+//        second: "2",
+//        third: false,
+//        fourth: ["anytime",2,3,4],
+//        fifth:  null
+//        }
+//));
+//==========================================================
+//const set1 = new Set;
+//while (set1.size < 15 ) {
+//  set1.add(Math.random() * 15 | 0);
+//}
+//const arr1 = [...set1].toString().split(',').map(el=>{
+//  return 'B'+ el
+//})
+//  return arr1
+//}     
+//console.log(getCard())
+  //const set1 = [];
+  //for (let i = 0; i <5; i++ ){  
+  //    min = Math.ceil(1);
+  //    max = Math.floor(15);
+  //    set1.push(Math.floor(Math.random() * (max - min)) + min);
+  //   }
+  //     const arr1 = [...set1].toString().split(',').map(el=>{
+  //  return 'B'+ el;
+  //})
+//  // let bingo = Object.keys(card) + Object.values(card)
+//  let newBingo = JSON.stringify(card).toString().replace(/[{}":]/g,'').split(',')
+//  console.log(typeof newBingo)
+//  return newBingo
+// }
+//======================================================================
+//=========================6 kyu toWeirdCase============================
+/** Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, 
+ * and returns the same string with all even indexed characters in each word upper cased, 
+ * and all odd indexed characters in each word lower cased. The indexing just explained is zero based, 
+ * so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+
+The passed in string will only consist of alphabetical characters and spaces(' '). 
+Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').*/
+//----------solutions:
+
+//function toWeirdCase(string){
+//  let str = string.toLowerCase().split('')
+//  count = 0
+//  for ( let i = 0; i < str.length; i++) {
+//    if ( str[i] === ' '){
+//        count = 0
+//      continue
+//    }
+//     else if ( count % 2 == 0){
+//      str[i] = str[i].toUpperCase()
+//    } 
+//    count++
+//  } 
+//  return str.join('')
+//}
+//console.log(toWeirdCase('This is a test'))
+////------- one more:
+//function toWeirdCase(string){
+//  return string.split(' ').map(function(word){
+//    return word.split('').map(function(letter, index){
+//      return index % 2 == 0 ? letter.toUpperCase() : letter.toLowerCase()
+//    }).join('');
+//  }).join(' ');
+//}
+////one more:
+//function toWeirdCase(string){
+//  return string.replace(/(\w{1,2})/g,(m)=>m[0].toUpperCase()+m.slice(1))
+//}
+//=====================================================================
+//=================6 kyu Who likes it?=================================
+/**You probably know the "like" system from Facebook and other pages. 
+ * People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+ */
+//--------- my solution:----------------------------------------
+//function likes(name) {
+//  name = ["Alex", "Jacob", "Mark", "Max","Max", "John", "Mark"]
+//  let res
+//  let count = 0
+//  if( name == -[]){
+//  return res = "no one likes this"
+//  } 
+//    else if( name.length === 1){
+//      return res = `${name} likes this`
+//    } 
+//      if( name.length === 2){
+//        return res = `${name[0]} and ${name[1]} like this`
+//      } 
+//        else if( name.length === 3){
+//          return res = `${name[0]}, ${name[1]} and ${name[2]} like this`
+//        } 
+//          else if( name.length > 3){
+//              return res = `${name[0]}, ${name[1]} and ${name.length-2} others like this`
+//          }
+//        return res
+//      }  
+//        console.log(likes())
+//======================================================================================
+//================5 kyu RGB To Hex Conversion===========================================
+/**The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. 
+ * Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+The following are examples of expected output values:
+
+rgb(255, 255, 255) // returns FFFFFF
+rgb(255, 255, 300) // returns FFFFFF
+rgb(0,0,0) // returns 000000
+rgb(148, 0, 211) // returns 9400D3
+ */
+//------------solution:-----------------------
+//function rgb(r, g, b){
+//  let res;
+//  if (r > 255 ){
+//      r = 255;
+//  } else if (g > 255) {
+//      g = 255;
+//  } else if (b > 255) {
+//      b = 255;
+//  };
+//  if (r <= 0 && g <= 0) {
+//      res = '0000' + b.toString(16)
+//  } else if (r <= 0 && b <= 0) {
+//      res = '00' + g.toString(16) + '00'
+//  } else if (g <= 0 && b <= 0) {
+//      res =  r.toString(16) + '0000'
+//  } else if (r <= 0 ) {
+//      res = '00' + g.toString(16) + b.toString(16)
+//  } else if (g <= 0 ) {
+//      res = r.toString(16) + '00' + b.toString(16)
+//  } else if (b <= 0 ) {
+//      res = r.toString(16) + g.toString(16) + '00'
+//  } else {
+//      res = r.toString(16)+ g.toString(16)+ b.toString(16) 
+//  }; 
+//  if (r <= 0 && g <= 0 && b <= 0) {
+//      res = '000000'   
+//  };
+//    return res.toUpperCase()
+//};
+//console.log(rgb(133,166,336))
+
+//function rgb(r, g, b){
+//  let res = r + g + b 
+//  r = r.toString(16)
+//  g = g.toString(16)
+//  b = b.toString(16)
+//  let newR = '0' + r.toString(16)
+//  let newG = '0' + g.toString(16)
+//  let newB = '0' + b.toString(16)
+//  if (r > 255 ){
+//      r = 255;
+//  } else if (g > 255) {
+//      g = 255;
+//  } else if (b > 255) {
+//      b = 255;
+//  } ;
+//   if (r <= 0 || r < 100) {
+//    res =  newR + g + b
+//  } 
+//   if (g <= 0 || g < 100) {
+//    g = r + newG + b 
+//  }
+//   if (b <= 0 || b < 100) {
+//    b = r + g + newB
+//  } else return res.toUpperCase()
+    
+    
+    
+// 85A6FF }; 
+
+//console.log(rgb(133,166,336))
+
+//function rgb(r, g, b){
+  
+  
+//  let res
+//  if ( r <= 0 || r <100){
+//    r = '0'+r.toString(16) 
+//  }
+//    else if (g <= 0) {
+//      g = 0
+//    }
+//      else if (b <= 0) {
+//        b = 0
+//      } 
+//         if (r == 0 && g == 0 && b == 0) {
+//          res = '000000' 
+//        }
+//          else {
+            
+//          } 
+//          res = r.toString(16) + g.toString(16) + b.toString(16)
+//            return res.toUpperCase()
+
+//}
+//console.log(rgb(6,255,255))
+
+//=========   Задания Momentum  =========================================
+
+//============= №1. Дата и время: =======================================
+
+//===========Планирование: setTimeout и setInterval====================
+
+//function printNumbers(from, to) {
+//  let current = from;
+
+//  let timerId = setInterval(function() {
+//    console.log(current);
+//    if (current == to) {
+//      clearInterval(timerId);
+//    }
+//    current++;
+//  }, 1000);
+//}
+//console.log(printNumbers(0,10))
+//---------------
+//Используем рекурсивный setTimeout:
+//function printNumbers(from, to) {
+//  let current = from;
+
+//  setTimeout(function go() {
+//    console.log(current);
+//    if (current < to) {
+//      setTimeout(go, 1000);
+//    }
+//    current++;
+//  }, 1000);
+//}
+//console.log(printNumbers(0,10))
+
+//function printNumbers(from, to) {
+//  let current = from;
+
+//  function go() {
+//    console.log(current);
+//    if (current == to) {
+//      clearInterval(timerId);
+//    }
+//    current++;
+//  }
+//  go();
+//  let timerId = setInterval(go, 1000);
+//}
+//printNumbers(1, 10);
+//======= Set time & date =============================
+
+//функция для показа даты:
+
+//function showTime() {
+//  const currentTime = date.toLocaleTimeString();
+//  return currentTime
+//}
+//console.log(showTime());
+
+//функция для показа времени: 
+
+//function showTime() {
+//  const date = new Date();
+//  const currentTime = date.toLocaleTimeString();
+//}
+//console.log(showTime())
+
+//функция для показа времени с ежесекундным обновлением:
+
+//  function showTime(){
+//  const date = new Date();
+//  const currentTime = date.toLocaleTimeString();
+//  setTimeout(showTime, 1000);
+//  console.log(currentTime); 
+//  return currentTime;
+//}
+//showTime();
+
+//или:
+
+//function showTime() {
+//  const date = new Date();
+//  const currentTime = date.toLocaleTimeString();
+//  setTimeout(function(){
+//   console.log(currentTime)   
+//  },1000);
+// setTimeout(showTime, 1000)
+//}
+//console.log(showTime())
+
+//скрипт для показа времени и даты:
+//переменные:
+  let date = new Date();
+  const options = {month: 'long', day: 'numeric'};
+  const currentDate = date.toLocaleDateString('ru-RU', options);
+  const currentTime = date.toLocaleTimeString();
+  let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+  let currentDay = days[date.getDay()];
+  const hours = date.getHours();
+  const timeOfDay = getTimeOfDay();
+  const greetingText = `Good ${timeOfDay}`;
+//Общая функция для ежесекундного обновления даты времени и приветствия:
+function showTime() {
+  setTimeout(function(){
+   console.log(currentTime) 
+   console.log(showDate())
+   console.log(showGreeting())
+  },1000);
+ setTimeout(showTime, 1000)
+}
+console.log(showTime())
+//функция даты:
+function showDate(){
+ return currentDay + ' ' + currentDate
+}
+//Функция приветствие: 
+function getTimeOfDay() {
+  if ( hours > 6 && hours < 12 ) {
+    return 'morning'
+  } else if ( hours > 12 && hours < 18 ) {
+    return 'day'
+  } else if ( hours > 18 && hours < 24 ) {
+    return 'evening'
+  } else 
+  return 'night' 
+}
+function showGreeting(){
+  return greetingText
+}
+//----local storage-------------
+
