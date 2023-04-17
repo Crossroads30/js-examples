@@ -128,7 +128,7 @@ return person.budjet === 3000
 })
 console.log(people[index])*/
 
-  //можно без индекса:
+//можно без индекса:
 
 /*const person = people.find(function(person) {
    return person.budjet === 3000
@@ -136,13 +136,13 @@ console.log(people[index])*/
    console.log(person)*/
 
 //это более замороченный способ:
-   /*let findedPerson
-   for (const person of people) {
-      if (person.budjet === 3000) {
-         findedPerson = person
-      }
+/*let findedPerson
+for (const person of people) {
+   if (person.budjet === 3000) {
+      findedPerson = person
    }
-   console.log(findedPerson)*/
+}
+console.log(findedPerson)*/
 
 //лучше сделать тоже самое с помощью стрелочной функции
 /*const person = people.find((person) => {
@@ -900,30 +900,30 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
 // return num.includes(n)
 //  }
 //  console.log(isPowerOfTwo(102))
-  // more
-  //function isPowerOfTwo(n){
-  //  let i = 0;
-  //  while(2**i < n){i++}
-  //    return (2**i == n) ? true : false;
-  //  }
-  //  console.log(isPowerOfTwo(1024))
-    //more
-  //  function isPowerOfTwo(n){
-  //    return Number.isInteger(Math.log2(n));
-      
-  //}
-  //====================================
-  //=============№14=====================
-  // function sentence(List) {
-  //  List.sort((a,b) => Object.keys(a)[0] - Object.keys(b)[0])
-  //  return List.map(el => (Object.values(el)[0])).join(' ')
-  //}
-  //console.log(sentence([
-  //  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
-  //  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
-  // ]))
-   //====================================
-   //===========№15======================
+// more
+//function isPowerOfTwo(n){
+//  let i = 0;
+//  while(2**i < n){i++}
+//    return (2**i == n) ? true : false;
+//  }
+//  console.log(isPowerOfTwo(1024))
+//more
+//  function isPowerOfTwo(n){
+//    return Number.isInteger(Math.log2(n));
+
+//}
+//====================================
+//=============№14=====================
+// function sentence(List) {
+//  List.sort((a,b) => Object.keys(a)[0] - Object.keys(b)[0])
+//  return List.map(el => (Object.values(el)[0])).join(' ')
+//}
+//console.log(sentence([
+//  {'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+//  {'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+// ]))
+//====================================
+//===========№15======================
 //const minSum = (num) => {
 //  num = [5,4,2,3]
 //  let num1 = Math.min(...num)
@@ -941,41 +941,41 @@ Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 
 //return num2
 //} 
 //   console.log(minSum())
-  // for ( i = 1; i < num.length; i++) {
-  //  if (num[i] > max) {
-  //      max = num[i];
-  //  } else if ( num[i]< min) {
-  //    min = num[i]
-  //  }
-  //function strCount(obj){
-  //  count = 0
-  //   obj =  Object.values(obj).flat()
-  //    console.log(obj)
-  //  for ( i = 0; i < obj.length; i++ ) {
-  //    if ( typeof obj[i] == 'string'){
-  //      count++
-  //    } 
-  //  } return count
-  //}
-  //console.log(strCount(obj = {
-  //  first: "1",
-  //  second: "2",
-  //  third: false,
-  //  fourth: ["anytime",2,3,4],
-  //  fifth:  null
-  //  }))
-  //=======================================
-  /**Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
+// for ( i = 1; i < num.length; i++) {
+//  if (num[i] > max) {
+//      max = num[i];
+//  } else if ( num[i]< min) {
+//    min = num[i]
+//  }
+//function strCount(obj){
+//  count = 0
+//   obj =  Object.values(obj).flat()
+//    console.log(obj)
+//  for ( i = 0; i < obj.length; i++ ) {
+//    if ( typeof obj[i] == 'string'){
+//      count++
+//    } 
+//  } return count
+//}
+//console.log(strCount(obj = {
+//  first: "1",
+//  second: "2",
+//  third: false,
+//  fourth: ["anytime",2,3,4],
+//  fifth:  null
+//  }))
+//=======================================
+/**Create a function strCount (takes an object as argument) that will count all string values inside an object. For example:
 
 strCount({
-  first: "1",
-  second: "2",
-  third: false,
-  fourth: ["anytime",2,3,4],
-  fifth:  null
-  })
-  //returns 3 */
-  //solution without recursion( not correct in some tests )
+first: "1",
+second: "2",
+third: false,
+fourth: ["anytime",2,3,4],
+fifth:  null
+})
+//returns 3 */
+//solution without recursion( not correct in some tests )
 //  function strCount(obj){
 //    let count = 0; 
 
@@ -1039,15 +1039,15 @@ strCount({
 //  return arr1
 //}     
 //console.log(getCard())
-  //const set1 = [];
-  //for (let i = 0; i <5; i++ ){  
-  //    min = Math.ceil(1);
-  //    max = Math.floor(15);
-  //    set1.push(Math.floor(Math.random() * (max - min)) + min);
-  //   }
-  //     const arr1 = [...set1].toString().split(',').map(el=>{
-  //  return 'B'+ el;
-  //})
+//const set1 = [];
+//for (let i = 0; i <5; i++ ){  
+//    min = Math.ceil(1);
+//    max = Math.floor(15);
+//    set1.push(Math.floor(Math.random() * (max - min)) + min);
+//   }
+//     const arr1 = [...set1].toString().split(',').map(el=>{
+//  return 'B'+ el;
+//})
 //  // let bingo = Object.keys(card) + Object.values(card)
 //  let newBingo = JSON.stringify(card).toString().replace(/[{}":]/g,'').split(',')
 //  console.log(typeof newBingo)
@@ -1200,16 +1200,16 @@ rgb(148, 0, 211) // returns 9400D3
 //   if (b <= 0 || b < 100) {
 //    b = r + g + newB
 //  } else return res.toUpperCase()
-    
-    
-    
+
+
+
 // 85A6FF }; 
 
 //console.log(rgb(133,166,336))
 
 //function rgb(r, g, b){
-  
-  
+
+
 //  let res
 //  if ( r <= 0 || r <100){
 //    r = '0'+r.toString(16) 
@@ -1224,7 +1224,7 @@ rgb(148, 0, 211) // returns 9400D3
 //          res = '000000' 
 //        }
 //          else {
-            
+
 //          } 
 //          res = r.toString(16) + g.toString(16) + b.toString(16)
 //            return res.toUpperCase()
@@ -1322,42 +1322,990 @@ rgb(148, 0, 211) // returns 9400D3
 
 //скрипт для показа времени и даты:
 //переменные:
-  let date = new Date();
-  const options = {month: 'long', day: 'numeric'};
-  const currentDate = date.toLocaleDateString('ru-RU', options);
-  const currentTime = date.toLocaleTimeString();
-  let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
-  let currentDay = days[date.getDay()];
-  const hours = date.getHours();
-  const timeOfDay = getTimeOfDay();
-  const greetingText = `Good ${timeOfDay}`;
+//let date = new Date();
+//const options = {month: 'long', day: 'numeric'};
+//const currentDate = date.toLocaleDateString('ru-RU', options);
+//const currentTime = date.toLocaleTimeString();
+//let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+//let currentDay = days[date.getDay()];
+//const hours = date.getHours();
+//const timeOfDay = getTimeOfDay();
+//const greetingText = `Good ${timeOfDay}`;
 //Общая функция для ежесекундного обновления даты времени и приветствия:
-function showTime() {
-  setTimeout(function(){
-   console.log(currentTime) 
-   console.log(showDate())
-   console.log(showGreeting())
-  },1000);
- setTimeout(showTime, 1000)
-}
-console.log(showTime())
-//функция даты:
-function showDate(){
- return currentDay + ' ' + currentDate
-}
-//Функция приветствие: 
-function getTimeOfDay() {
-  if ( hours > 6 && hours < 12 ) {
-    return 'morning'
-  } else if ( hours > 12 && hours < 18 ) {
-    return 'day'
-  } else if ( hours > 18 && hours < 24 ) {
-    return 'evening'
-  } else 
-  return 'night' 
-}
-function showGreeting(){
-  return greetingText
-}
+//function showTime() {
+//  setTimeout(function(){
+//   console.log(currentTime) 
+//   console.log(showDate())
+//   console.log(showGreeting())
+//  },1000);
+// setTimeout(showTime, 1000)
+//}
+//console.log(showTime())
+////функция даты:
+//function showDate(){
+// return currentDay + ' ' + currentDate
+//}
+////Функция приветствие: 
+//function getTimeOfDay() {
+//  if ( hours > 6 && hours < 12 ) {
+//    return 'morning'
+//  } else if ( hours > 12 && hours < 18 ) {
+//    return 'day'
+//  } else if ( hours > 18 && hours < 24 ) {
+//    return 'evening'
+//  } else 
+//  return 'night' 
+//}
+//function showGreeting(){
+//  return greetingText
+//}
 //----local storage-------------
+//=================== Human Readable Number ==========================
+//--------------------long solution:---------------------------------------------
+//function toReadable (number) {
+//  let numberArr = number.toString().split('');
+//  let number100_999 = number.toString().split('');
+//  let cutNum = number100_999.splice(1,2).join('').split('');
+//  console.log(number100_999);
+//  console.log(cutNum);
+//  let arr =[];
+//  const number0_19 = ['zero','one','two','three','four',
+//  'five','six','seven','eght','nine','ten','eleven','twelve',
+//  'thirteen','fourteen','fifteen','sixteen','seventeen','eghteen','nineteen',];
+//  const number20 = 'twenty';
+//  const number30 = 'thirty';
+//  const number40 = 'fourty';
+//  const number50 = 'fifty';
+//  const number60 = 'sixty';
+//  const number70 = 'seventy';
+//  const number80 = 'eghty';
+//  const number90 = 'ninety';
+//  const number100 = 'one hundred';
+//  const number200 = 'two hundred';
+//  const number300 = 'three hundred';
+//  const number400 = 'four hundred';
+//  const number500 = 'five hundred';
+//  const number600 = 'six hundred';
+//  const number700 = 'seven hundred';
+//  const number800 = 'eght hundred';
+//  const number900 = 'nine hundred';
 
+//  if ( number >= 0 && number < 20 ) {
+//        number0_19.forEach( (e,i) => {
+//        if( number === i ){
+//           arr.push(e) 
+//      }; 
+//    });
+//  }; 
+//  if ( number > 19 && number < 30 ) {
+//        number0_19.forEach( (e,i) => {
+//        if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//           arr.push(number20 + ' ' + e) 
+//           } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//              return arr.push( number20 )
+//      };
+//    });
+//  }; 
+//  if ( number > 29 && number < 40 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number30 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number30 )
+//      };
+//    });
+//  };
+//  if ( number > 39 && number < 50 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number40 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number40 )
+//      };
+//    });
+//  }; 
+//  if ( number > 49 && number < 60 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number50 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number50 )
+//      };
+//    });
+//  }; 
+//  if ( number > 59 && number < 70 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number60 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number60 )
+//      };
+//    });
+//  }; 
+//  if ( number > 69 && number < 80 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number70 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number70 )
+//      };
+//    });
+//  }; 
+//  if ( number > 79 && number < 90 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number80 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number80 )
+//      };
+//    });
+//  }; 
+//  if ( number > 89 && number < 100 ) {
+//     number0_19.forEach( (e,i) => {
+//     if ( numberArr[1] == i && numberArr[1] !== '0' ){
+//        arr.push(number90 + ' ' + e) 
+//        } else if ( numberArr[1] == i && numberArr[1] == '0' ){
+//           arr.push( number90 )
+//      };
+//    });
+//  };
+//  if ( number > 99 && number < 200 ) {
+//     number0_19.forEach( (e,i) => {
+//      if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//        arr.push( number100 +  ' ' + number0_19[0+i] )
+//      } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//        arr.push( number100 +  ' ' + number0_19[10+i] )
+//      } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number20 + ' ' + e) 
+//      } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number30 + ' ' + e) 
+//      } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number40 + ' ' + e) 
+//      } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number50 + ' ' + e) 
+//      } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number60 + ' ' + e) 
+//      } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number70 + ' ' + e) 
+//      } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number80 + ' ' + e) 
+//      } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//        arr.push( number100 + ' ' + number90 + ' ' + e) 
+//      };
+//    });
+//  };
+//  if ( number > 199 && number < 300 ) {
+//    number0_19.forEach( (e,i) => {
+//     if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//       arr.push( number200 +  ' ' + number0_19[0+i] )
+//     } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//       arr.push( number200 +  ' ' + number0_19[10+i] )
+//     } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number20 + ' ' + e) 
+//     } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number30 + ' ' + e) 
+//     } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number40 + ' ' + e) 
+//     } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number50 + ' ' + e) 
+//     } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number60 + ' ' + e) 
+//     } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number70 + ' ' + e) 
+//     } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number80 + ' ' + e) 
+//     } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//       arr.push( number200 + ' ' + number90 + ' ' + e) 
+//     };
+//   });
+// };
+// if ( number > 299 && number < 400 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number300 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number300 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number300 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 399 && number < 500 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number400 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number400 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number400 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 499 && number < 600 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number500 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number500 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number500 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 599 && number < 700 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number600 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number600 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number600 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 699 && number < 800 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number700 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number700 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number700 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 799 && number < 900 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number800 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number800 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number800 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//if ( number > 899 && number < 1000 ) {
+//  number0_19.forEach( (e,i) => {
+//   if ( cutNum[0] == 0 && cutNum[1] == i ) {
+//     arr.push( number900 +  ' ' + number0_19[0+i] )
+//   } else if ( cutNum[0] == 1 && cutNum[1] == i ) {
+//     arr.push( number900 +  ' ' + number0_19[10+i] )
+//   } else if ( cutNum[0] == 2 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number20 + ' ' + e) 
+//   } else if ( cutNum[0] == 3 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number30 + ' ' + e) 
+//   } else if ( cutNum[0] == 4 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number40 + ' ' + e) 
+//   } else if ( cutNum[0] == 5 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number50 + ' ' + e) 
+//   } else if ( cutNum[0] == 6 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number60 + ' ' + e) 
+//   } else if ( cutNum[0] == 7 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number70 + ' ' + e) 
+//   } else if ( cutNum[0] == 8 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number80 + ' ' + e) 
+//   } else if ( cutNum[0] == 9 && cutNum[1] == i  ) {
+//     arr.push( number900 + ' ' + number90 + ' ' + e) 
+//   };
+// });
+//};
+//return arr.join('');
+//}
+//console.log(toReadable(989));
+//------------- short solution :--------------------------------------
+// function toReadable (number) {
+//  if (!number) { return undefined } else {number}
+//  const numberArr = number.toString().split('');
+//  const arr =[];
+//  const number0_19 = [
+//  'zero','one','two','three','four',
+//  'five','six','seven','eght','nine',
+//  'ten','eleven','twelve','thirteen',
+//  'fourteen','fifteen','sixteen',
+//  'seventeen','eghteen','nineteen'
+//  ];
+//  const number10_19 = [
+//  'ten','eleven','twelve','thirteen',
+//  'fourteen','fifteen','sixteen',
+//  'seventeen','eghteen','nineteen'
+//  ]
+//  const number20_90 = [
+//  '','','twenty','thirty','fourty',
+//  'fifty','sixty','seventy','eghty','ninety'
+//  ];
+//  const number100_900 = [
+//  '','one hundred','two hundred','three hundred',
+//  'four hundred','five hundred','six hundred',
+//  'seven hundred','eght hundred','nine hundred'
+//  ];
+//  if (numberArr.length < 3 && number < 20) { 
+//    number0_19.forEach((el,i)=>{
+//      if ( i == number ) arr.push(el);    
+//    });
+//  } else if ( numberArr.length < 3 && number > 19 && number < 100 ) {
+//    number20_90.forEach((el,i) => {
+//      if ( i == numberArr[0] ) {
+//        arr.push(el + ' ');
+//          number0_19.forEach((el,i) => {
+//            if ( i == numberArr[1] && i !== 0){
+//              arr.push(el);
+//            };
+//          });
+//        };
+//      });
+//    } else if ( number > 109 && number < 120 ) {
+//      number100_900.forEach((el,i) => {
+//        if ( i == numberArr[0] ) {
+//          arr.push(el + ' ');
+//           number10_19.forEach((el,i)=>{
+//            if ( i == numberArr[2] ) {
+//              arr.push(el);
+//             };
+//           });
+//         };
+//       });
+//     } else if ( number > 99 && number < 110 || number > 119 ) {
+//      number100_900.forEach((el,i) => {
+//        if ( i == numberArr[0] ) {
+//          arr.push(el + ' ');
+//            number20_90.forEach((el,i) => {
+//              if ( i == numberArr[1] ) {
+//                arr.push(el);
+//                  number0_19.forEach((el,i) => {
+//                    if ( i == numberArr[2] && i !== 0 ) {
+//                  arr.push(' ' + el);
+//                };
+//              });
+//            };
+//          });
+//        };
+//      });
+//    };
+//    return arr.join('');
+//  };
+// console.log(toReadable(999));
+
+//function fakeBin(x){
+//   x = x.split('')
+//  x.forEach(el => {
+//    if(el<5){
+//      return 0
+//    } else el = 1
+//    return el
+//  });
+//  return x
+//}
+//const disemvowel = str =>
+//  str.replaceAll(/[eouai]/gi, '' )
+//console.log(disemvowel('red'))
+
+//var re = /(\w+)\s(\w+)/;
+//var str = 'John Smith';
+//var newstr = str.replace(re, '$2, $1');
+//console.log(newstr);
+//function isIsogram(str){
+//  str = str.toLowerCase().split('')
+//  console.log(str)
+//  let Isogram = new Set(str)
+// return (str.length === Isogram.size)
+//}
+//console.log(isIsogram("moOse"))
+
+
+//function calculate(x, y) {
+//  x = (2,3)
+//  y = (3,5)
+//  const calc=(...x)=>(...y)=> {
+//    return [].concat(x,y).reduce((a,b)=> a + b ,0)
+//  }
+//}
+//console.log(calculate())
+/* stack.push(1); // adds the element to the stack
+* stack.peek(); // returns the peek, but doesn't delete it, returns 1
+* stack.pop(); // returns the top element from stack and deletes it, returns 1
+* stack.pop(); // undefined
+*
+*/
+//============================================
+//=============class Stack=========================
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(element) {
+    // push element into the items
+    this.items.push(element);
+  }
+  pop() {
+    // return top most element in the stack
+    // and removes it from the stack
+    // Underflow if stack is empty
+    if (this.items.length == 0)
+      return "Underflow";
+    return this.items.pop();
+  }
+  peek() {
+    // return the top most element from the stack
+    // but does'nt delete it.
+    return this.items[this.items.length - 1];
+  }
+  isEmpty() {
+    // return true if stack is empty
+    return this.items.length == 0;
+  }
+  printStack() {
+    var str = "";
+    for (var i = 0; i < this.items.length; i++)
+      str += this.items[i] + " ";
+    return str;
+  }
+}
+let stack = new Stack
+console.log(stack.isEmpty());
+
+// returns Underflow
+console.log(stack.pop());
+
+
+// Adding element to the stack
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+// Printing the stack element
+// prints [10, 20, 30]
+console.log(stack.printStack());
+
+// returns 30
+console.log(stack.peek());
+
+// returns 30 and remove it from stack
+console.log(stack.pop());
+
+// returns [10, 20]
+console.log(stack.printStack());
+//============================================
+//==============class Queue=========================
+
+//class Node {
+//  constructor(value) {
+//    this.value = value;
+//    this.next = null;
+//  }
+//}
+class Queue1 {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  enqueue(value) {
+    const node = new Node(value); // creates the node using class Node
+
+    if (this.head) { // if the first Node exitsts
+      this.tail.next = node; // inserts the created node after the tail of our Queue
+      this.tail = node; // now the created node is the last node
+    } else { // if there are no nodes in the Queue
+      this.head = node; // the created node is a head 
+      this.tail = node // also the created node is a tail in Queue because it is single.
+    }
+
+    this.length++; // increases the length of Queue by 1
+  }
+  dequeue() {
+    const current = this.head; // saves the link to the head which we need to remove
+    this.head = this.head.next; // moves the head link to the second Node in the Queue
+    this.length--; // decreaments the length of our Queue
+
+    return current.value; // returns the removed Node's value
+  }
+  print() {
+    let current = this.head; // saves a link to the head of the queue
+
+    while (current) { // goes through each Node of the Queue
+      console.log(current.value); // prints the value of the Node in console
+      current = current.next; // moves link to the next node after head
+    }
+  }
+  isEmpty() {
+    return this.length === 0;
+  }
+  getHead() {
+    return this.head.value;
+  }
+  getLength() {
+    return this.length;
+  }
+}
+//----------second variant--------------
+class Queue2 {
+  constructor() {
+    this.elements = {};
+    this.head = 0;
+    this.tail = 0;
+  }
+  enqueue(element) {
+    this.elements[this.tail] = element;
+    this.tail++;
+  }
+  dequeue() {
+    const item = this.elements[this.head];
+    delete this.elements[this.head];
+    this.head++;
+    return item;
+  }
+  peek() {
+    return this.elements[this.head];
+  }
+  get length() {
+    return this.tail - this.head;
+  }
+  get isEmpty() {
+    return this.length === 0;
+  }
+}
+
+let q = new Queue2();
+for (let i = 1; i <= 7; i++) {
+  q.enqueue(i);
+}
+// get the current item at the front of the queue
+console.log(q.peek()); // 1
+
+// get the current length of queue
+console.log(q.length); // 7
+
+// dequeue all elements
+while (!q.isEmpty) {
+  console.log(q.dequeue());
+}
+//========================================
+//===========class BinarySearchTree=======
+// Node class
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+// Binary Search tree class
+class BinarySearchTree {
+  constructor() {
+    // root of a binary search tree
+    this.root = null;
+  }
+
+  // function to be implemented
+  // insert(data)
+  // remove(data)
+
+
+  // Helper function
+  // findMinNode()
+  // getRootNode()
+  // inorder(node)
+  // preorder(node)              
+  // postorder(node)
+  // search(node, data)
+}
+// helper method which creates a new node to
+// be inserted and calls insertNode
+insert(data)
+{
+  // Creating a node and initialising
+  // with data
+  var newNode = new Node(data);
+
+  // root is null then node will
+  // be added to the tree and made root.
+  if (this.root === null)
+    this.root = newNode;
+  else
+
+    // find the correct position in the
+    // tree and add the node
+    this.insertNode(this.root, newNode);
+}
+
+// Method to insert a node in a tree
+// it moves over the tree to find the location
+// to insert a node with a given data
+insertNode(node, newNode)
+{
+  // if the data is less than the node
+  // data move left of the tree
+  if (newNode.data < node.data) {
+    // if left is null insert node here
+    if (node.left === null)
+      node.left = newNode;
+    else
+
+      // if left is not null recur until
+      // null is found
+      this.insertNode(node.left, newNode);
+  }
+
+  // if the data is more than the node
+  // data move right of the tree
+  else {
+    // if right is null insert node here
+    if (node.right === null)
+      node.right = newNode;
+    else
+
+      // if right is not null recur until
+      // null is found
+      this.insertNode(node.right, newNode);
+  }
+}
+// helper method that calls the
+// removeNode with a given data
+remove(data)
+{
+  // root is re-initialized with
+  // root of a modified tree.
+  this.root = this.removeNode(this.root, data);
+}
+
+// Method to remove node with a
+// given data
+// it recur over the tree to find the
+// data and removes it
+removeNode(node, key)
+{
+
+  // if the root is null then tree is
+  // empty
+  if (node === null) 
+    return null;
+
+  // if data to be delete is less than
+  // roots data then move to left subtree
+  else if (key < node.data) {
+    node.left = this.removeNode(node.left, key);
+    return node;
+  }
+
+  // if data to be delete is greater than
+  // roots data then move to right subtree
+  else if (key > node.data) {
+    node.right = this.removeNode(node.right, key);
+    return node;
+  }
+
+  // if data is similar to the root's data
+  // then delete this node
+  else {
+    // deleting node with no children
+    if (node.left === null && node.right === null) {
+      node = null;
+      return node;
+    }
+
+    // deleting node with one children
+    if (node.left === null) {
+      node = node.right;
+      return node;
+    }
+
+    else if (node.right === null) {
+      node = node.left;
+      return node;
+    }
+
+    // Deleting node with two children
+    // minimum node of the right subtree
+    // is stored in aux
+    var aux = this.findMinNode(node.right);
+    node.data = aux.data;
+
+    node.right = this.removeNode(node.right, aux.data);
+    return node;
+  }
+
+}
+// Performs inorder traversal of a tree
+inorder(node)
+{
+  if (node !== null) {
+    this.inorder(node.left);
+    console.log(node.data);
+    this.inorder(node.right);
+  }
+}
+// Performs preorder traversal of a tree   
+preorder(node)
+{
+  if (node !== null) {
+    console.log(node.data);
+    this.preorder(node.left);
+    this.preorder(node.right);
+  }
+}
+// Performs postorder traversal of a tree
+postorder(node)
+{
+  if (node !== null) {
+    this.postorder(node.left);
+    this.postorder(node.right);
+    console.log(node.data);
+  }
+}
+//  finds the minimum node in tree
+// searching starts from given node
+findMinNode(node)
+{
+  // if left of a node is null
+  // then it must be minimum node
+  if (node.left === null)
+    return node;
+  else
+    return this.findMinNode(node.left);
+}
+// returns root of the tree
+getRootNode()
+{
+  return this.root;
+}
+// search for a node with given data
+search(node, data)
+{
+  // if trees is empty return null
+  if (node === null)
+    return null;
+
+  // if data is less than node's data
+  // move left
+  else if (data < node.data)
+    return this.search(node.left, data);
+
+  // if data is more than node's data
+  // move right
+  else if (data > node.data)
+    return this.search(node.right, data);
+
+  // if data is equal to the node data
+  // return node
+  else
+    return node;
+}
+// create an object for the BinarySearchTree
+var BST = new BinarySearchTree();
+
+// Inserting nodes to the BinarySearchTree
+BST.insert(15);
+BST.insert(25);
+BST.insert(10);
+BST.insert(7);
+BST.insert(22);
+BST.insert(17);
+BST.insert(13);
+BST.insert(5);
+BST.insert(9);
+BST.insert(27);
+
+//		 15
+//		 / \
+//	 10 25
+//	 / \ / \
+//	 7 13 22 27
+//	 / \ /
+// 5 9 17
+
+var root = BST.getRootNode();
+
+// prints 5 7 9 10 13 15 17 22 25 27
+BST.inorder(root);
+
+// Removing node with no children
+BST.remove(5);
+
+
+//		 15
+//		 / \
+//	 10 25
+//	 / \ / \
+//	 7 13 22 27
+//	 \ /
+//	 9 17
+
+
+var root = BST.getRootNode();
+
+// prints 7 9 10 13 15 17 22 25 27
+BST.inorder(root);
+
+// Removing node with one child
+BST.remove(7);
+
+//		 15
+//		 / \
+//	 10 25
+//	 / \ / \
+//	 9 13 22 27
+//		 /
+//		 17
+
+
+var root = BST.getRootNode();
+
+// prints 9 10 13 15 17 22 25 27
+BST.inorder(root);
+
+// Removing node with two children
+BST.remove(15);
+
+//		 17
+//		 / \
+//	 10 25
+//	 / \ / \
+//	 9 13 22 27
+
+var root = BST.getRootNode();
+console.log("inorder traversal");
+
+// prints 9 10 13 17 22 25 27
+BST.inorder(root);
+
+console.log("postorder traversal");
+BST.postorder(root);
+console.log("preorder traversal");
+BST.preorder(root);
+//======================================
+//==========function removeKFromList(/* l, k */)=========
+function ListNode(x) {
+  this.value = x;
+  this.next = null
+}
+
+function removeKFromList(l, k) {
+  // create node
+  let node = new ListNode();
+  // assign node.next to the beginning of the given linked list.
+  node.next = l;
+
+  // start iterating through the linked list
+  let current = node;
+  // while there is still a node
+  while(current.next) {
+      // if the value of the node equals to given K
+      if (current.next.value === k) {
+          // remove it from the list by hopping from the one node to the next node
+          current.next = current.next.next
+      } else {
+          // move from one node to the next.
+          current = current.next;
+      }
+  }
+  //return the linked list
+  return node.next;
+}
+
+// All changes are in the part below:
+
+function arrayToList(arr) {
+  return arr.reduceRight((next, val) => 
+      Object.assign(new ListNode(val), { next })
+  , null);
+}
+
+function listToArray(list) {
+  const arr = [];
+  for (let node = list; node; node = node.next) {
+      arr.push(node.value);
+  }
+  return arr;
+}
+
+const list = arrayToList([3, 1, 2, 3, 4, 5]);
+const shorter = removeKFromList(list, 3);
+const result = listToArray(shorter);
+console.log(result);
