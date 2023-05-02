@@ -43,18 +43,79 @@
 
 //console.log(__dirname);
 //console.log(__filename);
-const { stdout } = process;
-const flag = process.argv[2];
+//const { stdout } = process;
+//const flag = process.argv[2];
 
-if (flag === '-d') {
-    stdout.write(__dirname);
-} else if (flag === '-f') {
-    stdout.write(__filename);
-} else {
-    stdout.write('Пожалуйста, запустите программу с флагом -d или -f');
-};
+//if (flag === '-d') {
+//    stdout.write(__dirname);
+//} else if (flag === '-f') {
+//    stdout.write(__filename);
+//} else {
+//    stdout.write('Пожалуйста, запустите программу с флагом -d или -f');
+//};
 
 //const path = require('path');
 //const fs = require('fs');
 //const os = require('os');
-//npm install <имя модуля> 
+//npm install <имя модуля>;
+//npm uninstall <имя модуля>;
+
+//const path = require('path');
+//console.log(path.basename(__filename)) // index.js - имя файла на Windows, полный путь к файлу на POSIX-системах
+//console.log(path.dirname(__filename)) // C:\Users\Admin\Desktop\nodejs-basic - название папки
+//console.log(path.extname(__filename)) // .js - расширение файла
+//console.log(path.parse(__filename)); // возвращает объект в котором указывается корень диска, имя папки, имя файла, расширение файла, имя файла без расширения
+
+//const fs = require('fs');
+//Создадим папку. Для этого есть два метода:
+
+//асинхронный fs.mkdir
+//синхронный fs.mkdirSync
+
+//Создадим папку notes в текущей директории:
+const fs = require('fs');
+const path = require('path');
+
+//fs.mkdir(path.join(__dirname, 'notes'), err => {
+//    if (err) throw err;
+//    console.log('Папка была создана');
+//});
+
+//Создадим файл mynotes.txt, содержащий текст Hello world внутри папки notes:
+//fs.writeFile(
+//    path.join(__dirname, 'notes', 'mynotes.txt'),
+//    'Hello world',
+//    (err) => {
+//        if (err) throw err;
+//        console.log('Файл был создан');
+//    }
+//);
+
+//Дополним файл, записав в него ещё какую-то информацию
+//fs.appendFile(
+//  path.join(__dirname, 'notes', 'mynotes.txt'),
+//  ' From append file',
+//  err => {
+//      if (err) throw err;
+//      console.log('Файл был изменен');
+//  }
+//);
+//Прочитаем информацию из файла
+//fs.readFile(
+//  path.join(__dirname, 'notes', 'mynotes.txt'),
+//  'utf-8',
+//  (err, data) => {
+//      if (err) throw err;
+//      console.log(data);
+//  }
+//);
+
+//Переименуем файл
+//fs.rename(
+//  path.join(__dirname, 'notes', 'mynotes.txt'),
+//  path.join(__dirname, 'notes', 'notes.txt'),
+//  err => {
+//      if (err) throw err;
+//      console.log('Файл переименован');
+//  }
+//);
