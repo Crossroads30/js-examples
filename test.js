@@ -73,8 +73,8 @@
 //синхронный fs.mkdirSync
 
 //Создадим папку notes в текущей директории:
-const fs = require('fs');
-const path = require('path');
+//const fs = require('fs');
+//const path = require('path');
 
 //fs.mkdir(path.join(__dirname, 'notes'), err => {
 //    if (err) throw err;
@@ -119,3 +119,51 @@ const path = require('path');
 //      console.log('Файл переименован');
 //  }
 //);
+
+//Модуль os (operating system) предоставляет данные об операционной системе пользователя
+//const os = require('os');
+//// Платформа
+//console.log(os.platform());
+
+//// Архитектура
+//console.log(os.arch());
+
+//// Информация о CPU
+//console.log(os.cpus());
+
+//// Общий объём памяти
+//console.log(os.totalmem());
+
+//// Объём свободной памяти
+//console.log(os.freemem());
+
+//// Корневая директория
+//console.log(os.homedir());
+
+//// Время работы системы
+//console.log(os.uptime());
+
+//// Символ окончания строки в данной системе
+//console.log(os.EOL);
+
+//В Node.js для работы с сервером и протоколом HTTP используется модуль http
+//const http = require('http');
+
+//const PORT = 3000;
+
+//const requestHandler = (request, response) => {
+//    const { method, url } = request;
+//    const heading = `<h1 style="color: red">${url} page</h1>`;
+//    const content = `<div style="background-color: green; width: 100px; height: 100px">Green block 100px x 100px</div>`;
+//    console.log(`Получен ${method}-запрос на ${url}`);
+//    response.write(heading);
+//    response.end(content);
+//};
+
+//const server = http.createServer(requestHandler);
+
+//server.listen(PORT, 'localhost', () => {
+//    console.log(`Сервер запущен на порту ${PORT}`);
+//});
+
+//Установка модулей через npm.
