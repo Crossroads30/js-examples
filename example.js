@@ -1814,498 +1814,726 @@ rgb(148, 0, 211) // returns 9400D3
 //============================================
 //=============class Stack=========================
 
-class Stack {
-  constructor() {
-    this.items = [];
-  }
-  push(element) {
-    // push element into the items
-    this.items.push(element);
-  }
-  pop() {
-    // return top most element in the stack
-    // and removes it from the stack
-    // Underflow if stack is empty
-    if (this.items.length == 0)
-      return "Underflow";
-    return this.items.pop();
-  }
-  peek() {
-    // return the top most element from the stack
-    // but does'nt delete it.
-    return this.items[this.items.length - 1];
-  }
-  isEmpty() {
-    // return true if stack is empty
-    return this.items.length == 0;
-  }
-  printStack() {
-    var str = "";
-    for (var i = 0; i < this.items.length; i++)
-      str += this.items[i] + " ";
-    return str;
-  }
-}
-let stack = new Stack
-console.log(stack.isEmpty());
-
-// returns Underflow
-console.log(stack.pop());
-
-
-// Adding element to the stack
-stack.push(10);
-stack.push(20);
-stack.push(30);
-
-// Printing the stack element
-// prints [10, 20, 30]
-console.log(stack.printStack());
-
-// returns 30
-console.log(stack.peek());
-
-// returns 30 and remove it from stack
-console.log(stack.pop());
-
-// returns [10, 20]
-console.log(stack.printStack());
-//============================================
-//==============class Queue=========================
-
-//class Node {
-//  constructor(value) {
-//    this.value = value;
-//    this.next = null;
+//class Stack {
+//  constructor() {
+//    this.items = [];
+//  }
+//  push(element) {
+//    // push element into the items
+//    this.items.push(element);
+//  }
+//  pop() {
+//    // return top most element in the stack
+//    // and removes it from the stack
+//    // Underflow if stack is empty
+//    if (this.items.length == 0)
+//      return "Underflow";
+//    return this.items.pop();
+//  }
+//  peek() {
+//    // return the top most element from the stack
+//    // but does'nt delete it.
+//    return this.items[this.items.length - 1];
+//  }
+//  isEmpty() {
+//    // return true if stack is empty
+//    return this.items.length == 0;
+//  }
+//  printStack() {
+//    var str = "";
+//    for (var i = 0; i < this.items.length; i++)
+//      str += this.items[i] + " ";
+//    return str;
 //  }
 //}
-class Queue1 {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
+//let stack = new Stack
+//console.log(stack.isEmpty());
+
+//// returns Underflow
+//console.log(stack.pop());
+
+
+//// Adding element to the stack
+//stack.push(10);
+//stack.push(20);
+//stack.push(30);
+
+//// Printing the stack element
+//// prints [10, 20, 30]
+//console.log(stack.printStack());
+
+//// returns 30
+//console.log(stack.peek());
+
+//// returns 30 and remove it from stack
+//console.log(stack.pop());
+
+//// returns [10, 20]
+//console.log(stack.printStack());
+////============================================
+////==============class Queue=========================
+
+////class Node {
+////  constructor(value) {
+////    this.value = value;
+////    this.next = null;
+////  }
+////}
+//class Queue1 {
+//  constructor() {
+//    this.head = null;
+//    this.tail = null;
+//    this.length = 0;
+//  }
+
+//  enqueue(value) {
+//    const node = new Node(value); // creates the node using class Node
+
+//    if (this.head) { // if the first Node exitsts
+//      this.tail.next = node; // inserts the created node after the tail of our Queue
+//      this.tail = node; // now the created node is the last node
+//    } else { // if there are no nodes in the Queue
+//      this.head = node; // the created node is a head 
+//      this.tail = node // also the created node is a tail in Queue because it is single.
+//    }
+
+//    this.length++; // increases the length of Queue by 1
+//  }
+//  dequeue() {
+//    const current = this.head; // saves the link to the head which we need to remove
+//    this.head = this.head.next; // moves the head link to the second Node in the Queue
+//    this.length--; // decreaments the length of our Queue
+
+//    return current.value; // returns the removed Node's value
+//  }
+//  print() {
+//    let current = this.head; // saves a link to the head of the queue
+
+//    while (current) { // goes through each Node of the Queue
+//      console.log(current.value); // prints the value of the Node in console
+//      current = current.next; // moves link to the next node after head
+//    }
+//  }
+//  isEmpty() {
+//    return this.length === 0;
+//  }
+//  getHead() {
+//    return this.head.value;
+//  }
+//  getLength() {
+//    return this.length;
+//  }
+//}
+////----------second variant--------------
+//class Queue2 {
+//  constructor() {
+//    this.elements = {};
+//    this.head = 0;
+//    this.tail = 0;
+//  }
+//  enqueue(element) {
+//    this.elements[this.tail] = element;
+//    this.tail++;
+//  }
+//  dequeue() {
+//    const item = this.elements[this.head];
+//    delete this.elements[this.head];
+//    this.head++;
+//    return item;
+//  }
+//  peek() {
+//    return this.elements[this.head];
+//  }
+//  get length() {
+//    return this.tail - this.head;
+//  }
+//  get isEmpty() {
+//    return this.length === 0;
+//  }
+//}
+
+//let q = new Queue2();
+//for (let i = 1; i <= 7; i++) {
+//  q.enqueue(i);
+//}
+//// get the current item at the front of the queue
+//console.log(q.peek()); // 1
+
+//// get the current length of queue
+//console.log(q.length); // 7
+
+//// dequeue all elements
+//while (!q.isEmpty) {
+//  console.log(q.dequeue());
+//}
+////========================================
+////===========class BinarySearchTree=======
+//// Node class
+//class Node {
+//  constructor(data) {
+//    this.data = data;
+//    this.left = null;
+//    this.right = null;
+//  }
+//}
+//// Binary Search tree class
+//class BinarySearchTree {
+//  constructor() {
+//    // root of a binary search tree
+//    this.root = null;
+//  }
+
+//  // function to be implemented
+//  // insert(data)
+//  // remove(data)
+
+
+//  // Helper function
+//  // findMinNode()
+//  // getRootNode()
+//  // inorder(node)
+//  // preorder(node)              
+//  // postorder(node)
+//  // search(node, data)
+//}
+//// helper method which creates a new node to
+//// be inserted and calls insertNode
+//insert(data)
+//{
+//  // Creating a node and initialising
+//  // with data
+//  var newNode = new Node(data);
+
+//  // root is null then node will
+//  // be added to the tree and made root.
+//  if (this.root === null)
+//    this.root = newNode;
+//  else
+
+//    // find the correct position in the
+//    // tree and add the node
+//    this.insertNode(this.root, newNode);
+//}
+
+//// Method to insert a node in a tree
+//// it moves over the tree to find the location
+//// to insert a node with a given data
+//insertNode(node, newNode)
+//{
+//  // if the data is less than the node
+//  // data move left of the tree
+//  if (newNode.data < node.data) {
+//    // if left is null insert node here
+//    if (node.left === null)
+//      node.left = newNode;
+//    else
+
+//      // if left is not null recur until
+//      // null is found
+//      this.insertNode(node.left, newNode);
+//  }
+
+//  // if the data is more than the node
+//  // data move right of the tree
+//  else {
+//    // if right is null insert node here
+//    if (node.right === null)
+//      node.right = newNode;
+//    else
+
+//      // if right is not null recur until
+//      // null is found
+//      this.insertNode(node.right, newNode);
+//  }
+//}
+//// helper method that calls the
+//// removeNode with a given data
+//remove(data)
+//{
+//  // root is re-initialized with
+//  // root of a modified tree.
+//  this.root = this.removeNode(this.root, data);
+//}
+
+//// Method to remove node with a
+//// given data
+//// it recur over the tree to find the
+//// data and removes it
+//removeNode(node, key)
+//{
+
+//  // if the root is null then tree is
+//  // empty
+//  if (node === null) 
+//    return null;
+
+//  // if data to be delete is less than
+//  // roots data then move to left subtree
+//  else if (key < node.data) {
+//    node.left = this.removeNode(node.left, key);
+//    return node;
+//  }
+
+//  // if data to be delete is greater than
+//  // roots data then move to right subtree
+//  else if (key > node.data) {
+//    node.right = this.removeNode(node.right, key);
+//    return node;
+//  }
+
+//  // if data is similar to the root's data
+//  // then delete this node
+//  else {
+//    // deleting node with no children
+//    if (node.left === null && node.right === null) {
+//      node = null;
+//      return node;
+//    }
+
+//    // deleting node with one children
+//    if (node.left === null) {
+//      node = node.right;
+//      return node;
+//    }
+
+//    else if (node.right === null) {
+//      node = node.left;
+//      return node;
+//    }
+
+//    // Deleting node with two children
+//    // minimum node of the right subtree
+//    // is stored in aux
+//    var aux = this.findMinNode(node.right);
+//    node.data = aux.data;
+
+//    node.right = this.removeNode(node.right, aux.data);
+//    return node;
+//  }
+
+//}
+//// Performs inorder traversal of a tree
+//inorder(node)
+//{
+//  if (node !== null) {
+//    this.inorder(node.left);
+//    console.log(node.data);
+//    this.inorder(node.right);
+//  }
+//}
+//// Performs preorder traversal of a tree   
+//preorder(node)
+//{
+//  if (node !== null) {
+//    console.log(node.data);
+//    this.preorder(node.left);
+//    this.preorder(node.right);
+//  }
+//}
+//// Performs postorder traversal of a tree
+//postorder(node)
+//{
+//  if (node !== null) {
+//    this.postorder(node.left);
+//    this.postorder(node.right);
+//    console.log(node.data);
+//  }
+//}
+////  finds the minimum node in tree
+//// searching starts from given node
+//findMinNode(node)
+//{
+//  // if left of a node is null
+//  // then it must be minimum node
+//  if (node.left === null)
+//    return node;
+//  else
+//    return this.findMinNode(node.left);
+//}
+//// returns root of the tree
+//getRootNode()
+//{
+//  return this.root;
+//}
+//// search for a node with given data
+//search(node, data)
+//{
+//  // if trees is empty return null
+//  if (node === null)
+//    return null;
+
+//  // if data is less than node's data
+//  // move left
+//  else if (data < node.data)
+//    return this.search(node.left, data);
+
+//  // if data is more than node's data
+//  // move right
+//  else if (data > node.data)
+//    return this.search(node.right, data);
+
+//  // if data is equal to the node data
+//  // return node
+//  else
+//    return node;
+//}
+//// create an object for the BinarySearchTree
+//var BST = new BinarySearchTree();
+
+//// Inserting nodes to the BinarySearchTree
+//BST.insert(15);
+//BST.insert(25);
+//BST.insert(10);
+//BST.insert(7);
+//BST.insert(22);
+//BST.insert(17);
+//BST.insert(13);
+//BST.insert(5);
+//BST.insert(9);
+//BST.insert(27);
+
+////		 15
+////		 / \
+////	 10 25
+////	 / \ / \
+////	 7 13 22 27
+////	 / \ /
+//// 5 9 17
+
+//var root = BST.getRootNode();
+
+//// prints 5 7 9 10 13 15 17 22 25 27
+//BST.inorder(root);
+
+//// Removing node with no children
+//BST.remove(5);
+
+
+////		 15
+////		 / \
+////	 10 25
+////	 / \ / \
+////	 7 13 22 27
+////	 \ /
+////	 9 17
+
+
+//var root = BST.getRootNode();
+
+//// prints 7 9 10 13 15 17 22 25 27
+//BST.inorder(root);
+
+//// Removing node with one child
+//BST.remove(7);
+
+////		 15
+////		 / \
+////	 10 25
+////	 / \ / \
+////	 9 13 22 27
+////		 /
+////		 17
+
+
+//var root = BST.getRootNode();
+
+//// prints 9 10 13 15 17 22 25 27
+//BST.inorder(root);
+
+//// Removing node with two children
+//BST.remove(15);
+
+////		 17
+////		 / \
+////	 10 25
+////	 / \ / \
+////	 9 13 22 27
+
+//var root = BST.getRootNode();
+//console.log("inorder traversal");
+
+//// prints 9 10 13 17 22 25 27
+//BST.inorder(root);
+
+//console.log("postorder traversal");
+//BST.postorder(root);
+//console.log("preorder traversal");
+//BST.preorder(root);
+////======================================
+////==========function removeKFromList(/* l, k */)=========
+//function ListNode(x) {
+//  this.value = x;
+//  this.next = null
+//}
+
+//function removeKFromList(l, k) {
+//  // create node
+//  let node = new ListNode();
+//  // assign node.next to the beginning of the given linked list.
+//  node.next = l;
+
+//  // start iterating through the linked list
+//  let current = node;
+//  // while there is still a node
+//  while(current.next) {
+//      // if the value of the node equals to given K
+//      if (current.next.value === k) {
+//          // remove it from the list by hopping from the one node to the next node
+//          current.next = current.next.next
+//      } else {
+//          // move from one node to the next.
+//          current = current.next;
+//      }
+//  }
+//  //return the linked list
+//  return node.next;
+//}
+
+//// All changes are in the part below:
+
+//function arrayToList(arr) {
+//  return arr.reduceRight((next, val) => 
+//      Object.assign(new ListNode(val), { next })
+//  , null);
+//}
+
+//function listToArray(list) {
+//  const arr = [];
+//  for (let node = list; node; node = node.next) {
+//      arr.push(node.value);
+//  }
+//  return arr;
+//}
+//=====================================================
+//выделение элементов таблицы красным цветом:
+
+//const list = arrayToList([3, 1, 2, 3, 4, 5]);
+//const shorter = removeKFromList(list, 3);
+//const result = listToArray(shorter);
+//console.log(result);
+// 1. Таблица с `id="age-table"`.
+//let table = document.getElementById('age-table')
+
+//// 2. Все label в этой таблице
+//table.getElementsByTagName('label')
+//// или
+//document.querySelectorAll('#age-table label')
+
+//// 3. Первый td в этой таблице
+//table.rows[0].cells[0]
+//// или
+//table.getElementsByTagName('td')[0]
+//// или
+//table.querySelector('td')
+
+//// 4. Форма с name="search"
+//// предполагаем, что есть только один элемент с таким name в документе
+//let form = document.getElementsByName('search')[0]
+//// или, именно форма:
+//document.querySelector('form[name="search"]')
+
+//// 5. Первый input в этой форме
+//form.getElementsByTagName('input')[0]
+//// или
+//form.querySelector('input')
+
+//// 6. Последний input в этой форме
+//let inputs = form.querySelectorAll('input') // найти все input
+//inputs[inputs.length-1] // взять последний
+//=============================================================================
+//=====================создания элементов на странице==========================
+//Создание элемента
+//DOM-узел можно создать двумя методами:
+//document.createElement(tag)
+//Создаёт новый элемент с заданным тегом:
+//----let div = document.createElement('div');
+
+//document.createTextNode(text):
+//Создаёт новый текстовый узел с заданным текстом:
+//-----let textNode = document.createTextNode('А вот и я');
+
+//let div = document.createElement('div');
+//div.className = "alert";
+//div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
+////Методы вставки
+//Чтобы наш div появился, нам нужно вставить его где-нибудь в document. Например, в document.body.
+
+//Для этого есть метод append, в нашем случае: document.body.append(div).
+//document.body.prepend(div);
+
+//Вот методы для различных вариантов вставки:
+
+//node.append(...nodes or strings) – добавляет узлы или строки в конец node,
+//node.prepend(...nodes or strings) – вставляет узлы или строки в начало node,
+//node.before(...nodes or strings) –- вставляет узлы или строки до node,
+//node.after(...nodes or strings) –- вставляет узлы или строки после node,
+//node.replaceWith(...nodes or strings) –- заменяет node заданными узлами или строками.
+//------------------------------------------------------------------
+//insertAdjacentHTML/Text/Element
+//С этим может помочь другой, довольно универсальный метод: elem.insertAdjacentHTML(where, html).
+
+//Первый параметр – это специальное слово, указывающее, куда по отношению к elem производить вставку. Значение должно быть одним из следующих:
+
+//"beforebegin" – вставить html непосредственно перед elem,
+//"afterbegin" – вставить html в начало elem,
+//"beforeend" – вставить html в конец elem,
+//"afterend" – вставить html непосредственно после elem.
+//Второй параметр – это HTML-строка, которая будет вставлена именно «как HTML».
+//div.insertAdjacentHTML('beforebegin', '<p>Привет</p>');
+//  div.insertAdjacentHTML('afterend', '<p>Пока</p>');
+
+//Так что, вот альтернативный вариант показа сообщения:
+//document.body.insertAdjacentHTML("afterbegin", `<div class="alert">
+//    <strong>Всем привет!</strong> Вы прочитали важное сообщение.
+//  </div>`);
+
+//  Удаление узлов--------------------------------
+//Для удаления узла есть методы node.remove().
+
+//Например, сделаем так, чтобы наше сообщение удалялось через секунду:
+//let div = document.createElement('div');
+//  div.className = "alert";
+//  div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
+
+//  document.body.append(div);
+//  setTimeout(() => div.remove(), 1000);
+
+//Клонирование узлов: cloneNode-------------------------
+//Как вставить ещё одно подобное сообщение?
+
+//Мы могли бы создать функцию и поместить код туда. Альтернатива – клонировать существующий div и изменить текст внутри него (при необходимости).
+
+//Иногда, когда у нас есть большой элемент, это может быть быстрее и проще.
+
+//Вызов elem.cloneNode(true) создаёт «глубокий» клон элемента – со всеми атрибутами и дочерними элементами. Если мы вызовем elem.cloneNode(false), тогда клон будет без дочерних элементов.
+//Пример копирования сообщения:
+//let div2 = div.cloneNode(true); // клонировать сообщение
+//div2.querySelector('strong').innerHTML = 'Всем пока!'; // изменить клонированный элемент
+
+//div.after(div2); // показать клонированный элемент после существующего div
+
+//DocumentFragment----------------------------------------------------------------
+//DocumentFragment является специальным DOM-узлом, который служит обёрткой для передачи списков узлов.
+
+//Мы можем добавить к нему другие узлы, но когда мы вставляем его куда-то, он «исчезает», вместо него вставляется его содержимое.
+
+//Например, getListContent ниже генерирует фрагмент с элементами <li>, которые позже вставляются в <ul>:
+{/*<ul id="ul"></ul>
+
+<script>
+function getListContent() {
+  let fragment = new DocumentFragment();
+
+  for(let i=1; i<=3; i++) {
+    let li = document.createElement('li');
+    li.append(i);
+    fragment.append(li);
   }
 
-  enqueue(value) {
-    const node = new Node(value); // creates the node using class Node
-
-    if (this.head) { // if the first Node exitsts
-      this.tail.next = node; // inserts the created node after the tail of our Queue
-      this.tail = node; // now the created node is the last node
-    } else { // if there are no nodes in the Queue
-      this.head = node; // the created node is a head 
-      this.tail = node // also the created node is a tail in Queue because it is single.
-    }
-
-    this.length++; // increases the length of Queue by 1
-  }
-  dequeue() {
-    const current = this.head; // saves the link to the head which we need to remove
-    this.head = this.head.next; // moves the head link to the second Node in the Queue
-    this.length--; // decreaments the length of our Queue
-
-    return current.value; // returns the removed Node's value
-  }
-  print() {
-    let current = this.head; // saves a link to the head of the queue
-
-    while (current) { // goes through each Node of the Queue
-      console.log(current.value); // prints the value of the Node in console
-      current = current.next; // moves link to the next node after head
-    }
-  }
-  isEmpty() {
-    return this.length === 0;
-  }
-  getHead() {
-    return this.head.value;
-  }
-  getLength() {
-    return this.length;
-  }
+  return fragment;
 }
-//----------second variant--------------
-class Queue2 {
-  constructor() {
-    this.elements = {};
-    this.head = 0;
-    this.tail = 0;
-  }
-  enqueue(element) {
-    this.elements[this.tail] = element;
-    this.tail++;
-  }
-  dequeue() {
-    const item = this.elements[this.head];
-    delete this.elements[this.head];
-    this.head++;
-    return item;
-  }
-  peek() {
-    return this.elements[this.head];
-  }
-  get length() {
-    return this.tail - this.head;
-  }
-  get isEmpty() {
-    return this.length === 0;
-  }
-}
 
-let q = new Queue2();
-for (let i = 1; i <= 7; i++) {
-  q.enqueue(i);
-}
-// get the current item at the front of the queue
-console.log(q.peek()); // 1
+ul.append(getListContent()); // (*)
+</script>*/}
 
-// get the current length of queue
-console.log(q.length); // 7
+//Обратите внимание, что на последней строке с (*) мы добавляем DocumentFragment, но он «исчезает», поэтому структура будет:
 
-// dequeue all elements
-while (!q.isEmpty) {
-  console.log(q.dequeue());
-}
-//========================================
-//===========class BinarySearchTree=======
-// Node class
-class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
-}
-// Binary Search tree class
-class BinarySearchTree {
-  constructor() {
-    // root of a binary search tree
-    this.root = null;
+//<ul>
+//  <li>1</li>
+//  <li>2</li>
+//  <li>3</li>
+//</ul>
+//DocumentFragment редко используется. Зачем добавлять элементы в специальный вид узла, если вместо этого мы можем вернуть массив узлов? Переписанный пример:
+
+{/*<ul id="ul"></ul>
+
+<script>
+function getListContent() {
+  let result = [];
+
+  for(let i=1; i<=3; i++) {
+    let li = document.createElement('li');
+    li.append(i);
+    result.push(li);
   }
 
-  // function to be implemented
-  // insert(data)
-  // remove(data)
-
-
-  // Helper function
-  // findMinNode()
-  // getRootNode()
-  // inorder(node)
-  // preorder(node)              
-  // postorder(node)
-  // search(node, data)
-}
-// helper method which creates a new node to
-// be inserted and calls insertNode
-insert(data)
-{
-  // Creating a node and initialising
-  // with data
-  var newNode = new Node(data);
-
-  // root is null then node will
-  // be added to the tree and made root.
-  if (this.root === null)
-    this.root = newNode;
-  else
-
-    // find the correct position in the
-    // tree and add the node
-    this.insertNode(this.root, newNode);
+  return result;
 }
 
-// Method to insert a node in a tree
-// it moves over the tree to find the location
-// to insert a node with a given data
-insertNode(node, newNode)
-{
-  // if the data is less than the node
-  // data move left of the tree
-  if (newNode.data < node.data) {
-    // if left is null insert node here
-    if (node.left === null)
-      node.left = newNode;
-    else
+ul.append(...getListContent()); // append + оператор "..." = друзья!
+</script>*/}
 
-      // if left is not null recur until
-      // null is found
-      this.insertNode(node.left, newNode);
-  }
+//-------------------------Итого-----------------------------------
+//Методы для создания узлов:
 
-  // if the data is more than the node
-  // data move right of the tree
-  else {
-    // if right is null insert node here
-    if (node.right === null)
-      node.right = newNode;
-    else
+//document.createElement(tag) – создаёт элемент с заданным тегом,
+//document.createTextNode(value) – создаёт текстовый узел (редко используется),
+//elem.cloneNode(deep) – клонирует элемент, если deep==true, то со всеми дочерними элементами.
+//Вставка и удаление:
 
-      // if right is not null recur until
-      // null is found
-      this.insertNode(node.right, newNode);
-  }
-}
-// helper method that calls the
-// removeNode with a given data
-remove(data)
-{
-  // root is re-initialized with
-  // root of a modified tree.
-  this.root = this.removeNode(this.root, data);
-}
+//node.append(...nodes or strings) – вставляет в node в конец,
+//node.prepend(...nodes or strings) – вставляет в node в начало,
+//node.before(...nodes or strings) – вставляет прямо перед node,
+//node.after(...nodes or strings) – вставляет сразу после node,
+//node.replaceWith(...nodes or strings) – заменяет node.
+//node.remove() – удаляет node.
+//Устаревшие методы:
 
-// Method to remove node with a
-// given data
-// it recur over the tree to find the
-// data and removes it
-removeNode(node, key)
-{
+//parent.appendChild(node)
+//parent.insertBefore(node, nextSibling)
+//parent.removeChild(node)
+//parent.replaceChild(newElem, node)
+//Все эти методы возвращают node.
 
-  // if the root is null then tree is
-  // empty
-  if (node === null) 
-    return null;
+//Если нужно вставить фрагмент HTML, то elem.insertAdjacentHTML(where, html) вставляет в зависимости от where:
 
-  // if data to be delete is less than
-  // roots data then move to left subtree
-  else if (key < node.data) {
-    node.left = this.removeNode(node.left, key);
-    return node;
-  }
+//"beforebegin" – вставляет html прямо перед elem,
+//"afterbegin" – вставляет html в elem в начало,
+//"beforeend" – вставляет html в elem в конец,
+//"afterend" – вставляет html сразу после elem.
+//Также существуют похожие методы elem.insertAdjacentText и elem.insertAdjacentElement, они вставляют текстовые строки и элементы, но они редко используются.
 
-  // if data to be delete is greater than
-  // roots data then move to right subtree
-  else if (key > node.data) {
-    node.right = this.removeNode(node.right, key);
-    return node;
-  }
+//Чтобы добавить HTML на страницу до завершения её загрузки:
 
-  // if data is similar to the root's data
-  // then delete this node
-  else {
-    // deleting node with no children
-    if (node.left === null && node.right === null) {
-      node = null;
-      return node;
-    }
+//document.write(html)
+//После загрузки страницы такой вызов затирает документ. В основном встречается в старых скриптах.
 
-    // deleting node with one children
-    if (node.left === null) {
-      node = node.right;
-      return node;
-    }
+//Задачи:
+//Очистите элемент
+//важность: 5
+//Создайте функцию clear(elem), которая удаляет всё содержимое из elem.
 
-    else if (node.right === null) {
-      node = node.left;
-      return node;
-    }
+//<ol id="elem">
+//  <li>Привет</li>
+//  <li>Мир</li>
+//</ol>
 
-    // Deleting node with two children
-    // minimum node of the right subtree
-    // is stored in aux
-    var aux = this.findMinNode(node.right);
-    node.data = aux.data;
+//<script>
+//  function clear(elem) { /* ваш код */ }
 
-    node.right = this.removeNode(node.right, aux.data);
-    return node;
-  }
+//  clear(elem); // очищает список
+//</script>
 
-}
-// Performs inorder traversal of a tree
-inorder(node)
-{
-  if (node !== null) {
-    this.inorder(node.left);
-    console.log(node.data);
-    this.inorder(node.right);
-  }
-}
-// Performs preorder traversal of a tree   
-preorder(node)
-{
-  if (node !== null) {
-    console.log(node.data);
-    this.preorder(node.left);
-    this.preorder(node.right);
-  }
-}
-// Performs postorder traversal of a tree
-postorder(node)
-{
-  if (node !== null) {
-    this.postorder(node.left);
-    this.postorder(node.right);
-    console.log(node.data);
-  }
-}
-//  finds the minimum node in tree
-// searching starts from given node
-findMinNode(node)
-{
-  // if left of a node is null
-  // then it must be minimum node
-  if (node.left === null)
-    return node;
-  else
-    return this.findMinNode(node.left);
-}
-// returns root of the tree
-getRootNode()
-{
-  return this.root;
-}
-// search for a node with given data
-search(node, data)
-{
-  // if trees is empty return null
-  if (node === null)
-    return null;
+//Сначала давайте посмотрим, как не надо это делать:
 
-  // if data is less than node's data
-  // move left
-  else if (data < node.data)
-    return this.search(node.left, data);
+//function clear(elem) {
+//  for (let i=0; i < elem.childNodes.length; i++) {
+//      elem.childNodes[i].remove();
+//  }
+//}
+//Это не будет работать, потому что вызов remove() сдвигает коллекцию elem.childNodes, поэтому элементы начинаются каждый раз с индекса 0. А i увеличивается, и некоторые элементы будут пропущены.
 
-  // if data is more than node's data
-  // move right
-  else if (data > node.data)
-    return this.search(node.right, data);
+//Цикл for..of делает то же самое.
 
-  // if data is equal to the node data
-  // return node
-  else
-    return node;
-}
-// create an object for the BinarySearchTree
-var BST = new BinarySearchTree();
+//Правильным вариантом может быть:
 
-// Inserting nodes to the BinarySearchTree
-BST.insert(15);
-BST.insert(25);
-BST.insert(10);
-BST.insert(7);
-BST.insert(22);
-BST.insert(17);
-BST.insert(13);
-BST.insert(5);
-BST.insert(9);
-BST.insert(27);
+//function clear(elem) {
+//  while (elem.firstChild) {
+//    elem.firstChild.remove();
+//  }
+//}
+//А также есть более простой способ сделать то же самое:
 
-//		 15
-//		 / \
-//	 10 25
-//	 / \ / \
-//	 7 13 22 27
-//	 / \ /
-// 5 9 17
-
-var root = BST.getRootNode();
-
-// prints 5 7 9 10 13 15 17 22 25 27
-BST.inorder(root);
-
-// Removing node with no children
-BST.remove(5);
-
-
-//		 15
-//		 / \
-//	 10 25
-//	 / \ / \
-//	 7 13 22 27
-//	 \ /
-//	 9 17
-
-
-var root = BST.getRootNode();
-
-// prints 7 9 10 13 15 17 22 25 27
-BST.inorder(root);
-
-// Removing node with one child
-BST.remove(7);
-
-//		 15
-//		 / \
-//	 10 25
-//	 / \ / \
-//	 9 13 22 27
-//		 /
-//		 17
-
-
-var root = BST.getRootNode();
-
-// prints 9 10 13 15 17 22 25 27
-BST.inorder(root);
-
-// Removing node with two children
-BST.remove(15);
-
-//		 17
-//		 / \
-//	 10 25
-//	 / \ / \
-//	 9 13 22 27
-
-var root = BST.getRootNode();
-console.log("inorder traversal");
-
-// prints 9 10 13 17 22 25 27
-BST.inorder(root);
-
-console.log("postorder traversal");
-BST.postorder(root);
-console.log("preorder traversal");
-BST.preorder(root);
-//======================================
-//==========function removeKFromList(/* l, k */)=========
-function ListNode(x) {
-  this.value = x;
-  this.next = null
-}
-
-function removeKFromList(l, k) {
-  // create node
-  let node = new ListNode();
-  // assign node.next to the beginning of the given linked list.
-  node.next = l;
-
-  // start iterating through the linked list
-  let current = node;
-  // while there is still a node
-  while(current.next) {
-      // if the value of the node equals to given K
-      if (current.next.value === k) {
-          // remove it from the list by hopping from the one node to the next node
-          current.next = current.next.next
-      } else {
-          // move from one node to the next.
-          current = current.next;
-      }
-  }
-  //return the linked list
-  return node.next;
-}
-
-// All changes are in the part below:
-
-function arrayToList(arr) {
-  return arr.reduceRight((next, val) => 
-      Object.assign(new ListNode(val), { next })
-  , null);
-}
-
-function listToArray(list) {
-  const arr = [];
-  for (let node = list; node; node = node.next) {
-      arr.push(node.value);
-  }
-  return arr;
-}
-
-const list = arrayToList([3, 1, 2, 3, 4, 5]);
-const shorter = removeKFromList(list, 3);
-const result = listToArray(shorter);
-console.log(result);
+//function clear(elem) {
+//  elem.innerHTML = '';
+//}
